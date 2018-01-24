@@ -1,4 +1,4 @@
-class PeopleController < ApplicationController
+class DancersController < ApplicationController
   def index
 
   end
