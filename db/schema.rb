@@ -10,15 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180124114020) do
+ActiveRecord::Schema.define(version: 20180124121003) do
 
   create_table "dancers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "first_name", null: false
-    t.string   "last_name",  null: false
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "score"
-    t.integer  "group_id"
+    t.integer  "score",      null: false
+    t.integer  "group_id",   null: false
     t.index ["group_id"], name: "fk_rails_051c369b06", using: :btree
   end
 
@@ -29,12 +28,12 @@ ActiveRecord::Schema.define(version: 20180124114020) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "first_name",      null: false
-    t.string   "last_name",       null: false
+    t.string   "name",            null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "password_digest"
-    t.string   "username"
+    t.string   "password_digest", null: false
+    t.string   "username",        null: false
+    t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
   add_foreign_key "dancers", "groups"

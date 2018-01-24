@@ -6,7 +6,7 @@
 
   g = Group.create(:name => "#{rand}group")
 
-  User.create(:first_name => "test#{rand}", :last_name => "user#{rand}", :password => "#{rand}#{rand}")
+  User.create(:username => "tu#{rand}", :name => "test#{rand} user#{rand}", :password => "#{rand}#{rand}")
 
-  Dancer.create(:first_name => "test#{rand}", :last_name => "user#{rand}", :score => rand, :group_id => g.id)
+  Dancer.create(:name => "dance#{rand} person#{rand}", :score => rand, :group_id => g.id)
 end
