@@ -82,10 +82,10 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.2.0)
     minitest (5.10.2)
+    mysql2 (0.4.10)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
-    pg (0.21.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -195,7 +195,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   listen (~> 3.0.5)
-  pg (~> 0.18)
+  mysql2 (~> 0.4)
   pry-rails
   puma (~> 3.0)
   rails (~> 5.0.0)
@@ -210,4 +210,4 @@ DEPENDENCIES
   valid_attribute
 
 BUNDLED WITH
-   1.14.6
+   1.15.4
