@@ -1,0 +1,17 @@
+<h1>Dancer info for <%= @dancer.name %></h1>
+
+<table>
+  <tr>
+    <th>Group</th>
+  </tr>
+    <tr>
+      <td><%= @dancer.group.name %></td>
+    </tr>
+</table>
+
+<table>
+<%= render "scores/table" %>
+<%= render "scores/score", :score => @score %>
+</table>
+
+<%= link_to "Edit Scores", edit_dancer_path %>

@@ -19,11 +19,11 @@
 
   rand = Random.rand(0...973822)
 
-  g = Group.create(:name => "#{rand}group")
+  g = Group.create(:name => "group#{rand}")
   g.save
   p g
 
-  u = User.create(:username => "tu#{rand}", :name => "test#{rand} user#{rand}", :password => "#{rand}#{rand}")
+  u = User.create(:username => "tu#{rand}", :name => "test#{rand} user#{rand}", :password => "#{rand}*#{rand}")
   p u
 
   d = Dancer.create(:name => "dance#{rand} person#{rand}", :group_id => g.id)

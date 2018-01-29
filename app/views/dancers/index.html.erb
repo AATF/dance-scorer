@@ -3,14 +3,14 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Score</th>
     <th>Group</th>
+    <th>Edit Dancer Scores</th>
   </tr>
   <% @dancers.each do |dancer| %>
     <tr>
       <td><%= dancer.name %></td>
-      <td><%= dancer.score %></td>
       <td><%= dancer.group.name %></td>
+      <td><%= link_to "edit dancer score", edit_dancer_path(dancer.id) %></td>
     </tr>
   <% end %>
 </table>
