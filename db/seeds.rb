@@ -12,17 +12,25 @@
     :violation => 15
   }
   scores = {}
-  scores.each do |c,p|
+  score_percentages.each do |c,p|
     r = Random.rand(0..p)
     scores[c] = r
   end
-  s = Score.create(scores)
 
   rand = Random.rand(0...973822)
 
   g = Group.create(:name => "#{rand}group")
+  g.save
+  p g
 
-  User.create(:username => "tu#{rand}", :name => "test#{rand} user#{rand}", :password => "#{rand}#{rand}")
+  u = User.create(:username => "tu#{rand}", :name => "test#{rand} user#{rand}", :password => "#{rand}#{rand}")
+  p u
 
-  Dancer.create(:name => "dance#{rand} person#{rand}", :score => rand, :group_id => g.id, :score_id => s.id)
+  d = Dancer.create(:name => "dance#{rand} person#{rand}", :group_id => g.id)
+  p d
+
+  scores[:dancer_id] = d.id
+  s = Score.create(scores)
+  s.save
+  p s
 end

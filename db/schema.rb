@@ -10,34 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180129074347) do
+ActiveRecord::Schema.define(version: 20180129082109) do
 
   create_table "dancers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "score_id",   null: false
     t.integer  "group_id",   null: false
     t.index ["group_id"], name: "fk_rails_051c369b06", using: :btree
-    t.index ["score_id"], name: "fk_rails_44adfdd452", using: :btree
   end
 
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "scores", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "theme"
-    t.integer  "choreography"
-    t.integer  "technique"
-    t.integer  "presentation"
-    t.integer  "costume"
-    t.integer  "music"
-    t.integer  "violation"
+    t.integer  "theme",        null: false
+    t.integer  "choreography", null: false
+    t.integer  "technique",    null: false
+    t.integer  "presentation", null: false
+    t.integer  "costume",      null: false
+    t.integer  "music",        null: false
+    t.integer  "violation",    null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "dancer_id"
+    t.index ["dancer_id"], name: "fk_rails_5b03197483", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -50,5 +50,5 @@ ActiveRecord::Schema.define(version: 20180129074347) do
   end
 
   add_foreign_key "dancers", "groups"
-  add_foreign_key "dancers", "scores"
+  add_foreign_key "scores", "dancers"
 end
