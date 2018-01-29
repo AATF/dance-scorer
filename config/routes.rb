@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :groups, only: [:index]
   resources :users, only: [:index]
   resources :dancers, only: [:index]
-
+  resources :scores, only: [:index]
 end

@@ -1,0 +1,26 @@
+<h1>Scores index</h1>
+
+<table>
+  <tr>
+    <th>Dancer Name</th>
+    <th>theme</th>
+    <th>choreography</th>
+    <th>technique</th>
+    <th>presentation</th>
+    <th>costume</th>
+    <th>music</th>
+    <th>violation</th>
+  </tr>
+  <% @scores.each do |score| %>
+    <tr>
+      <td><%= Dancer.find(score.dancer_id).name %></td>
+      <td><%= score.theme %></td>
+      <td><%= score.choreography %></td>
+      <td><%= score.technique %></td>
+      <td><%= score.presentation %></td>
+      <td><%= score.costume %></td>
+      <td><%= score.music %></td>
+      <td><%= score.violation %></td>
+    </tr>
+  <% end %>
+</table>
