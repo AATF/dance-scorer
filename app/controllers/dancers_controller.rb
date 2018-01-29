@@ -10,7 +10,6 @@ class DancersController < ApplicationController
 
   def edit
     @dancer = Dancer.find(params[:id])
-
-    p params
+    @score = Score.find_by(:dancer_id => params[:id])
   end
 end
