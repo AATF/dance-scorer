@@ -2,11 +2,27 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 (1..10).each do |num|
-  rand = Random.rand(2...973822)
+  score_percentages = {
+    :theme => 20,
+    :choreography => 15,
+    :technique => 15,
+    :presentation => 20,
+    :costume => 15,
+    :music => 15,
+    :violation => 15
+  }
+  scores = {}
+  scores.each do |c,p|
+    r = Random.rand(0..p)
+    scores[c] = r
+  end
+  s = Score.create(scores)
+
+  rand = Random.rand(0...973822)
 
   g = Group.create(:name => "#{rand}group")
 
   User.create(:username => "tu#{rand}", :name => "test#{rand} user#{rand}", :password => "#{rand}#{rand}")
 
-  Dancer.create(:name => "dance#{rand} person#{rand}", :score => rand, :group_id => g.id)
+  Dancer.create(:name => "dance#{rand} person#{rand}", :score => rand, :group_id => g.id, :score_id => s.id)
 end
