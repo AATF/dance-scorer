@@ -3,4 +3,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :username, presence: true
+
+  has_many :scores
 end

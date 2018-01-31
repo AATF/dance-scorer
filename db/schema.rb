@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180129082109) do
+ActiveRecord::Schema.define(version: 20180131063224) do
 
   create_table "dancers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -36,8 +36,10 @@ ActiveRecord::Schema.define(version: 20180129082109) do
     t.integer  "violation",    null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "dancer_id"
+    t.integer  "dancer_id",    null: false
+    t.integer  "user_id",      null: false
     t.index ["dancer_id"], name: "fk_rails_5b03197483", using: :btree
+    t.index ["user_id"], name: "fk_rails_f5dcd5d06f", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -51,4 +53,5 @@ ActiveRecord::Schema.define(version: 20180129082109) do
 
   add_foreign_key "dancers", "groups"
   add_foreign_key "scores", "dancers"
+  add_foreign_key "scores", "users"
 end

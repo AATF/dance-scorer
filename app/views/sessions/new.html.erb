@@ -1,0 +1,13 @@
+<% @title = "Login" %>
+
+<h1>Login</h1>
+
+<%= form_tag(sessions_path) do %>
+    <%= label(:session, :username, "Username") %>
+    <%= text_field(:session, :username) %>
+
+    <%= label(:session, :password, "Password") %>
+    <%= password_field(:session, :password) %>
+
+    <%= submit_tag("Submit") %>
+<% end %>

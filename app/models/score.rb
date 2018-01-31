@@ -8,4 +8,5 @@ class Score < ApplicationRecord
   validates :violation, numericality: { only_integer: true }
 
   belongs_to :dancer
+  belongs_to :user
 end
