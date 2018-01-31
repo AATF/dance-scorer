@@ -1,12 +1,24 @@
+<% @title = "groups" %>
+
 <h1>Groups index</h1>
+
+back to <%= link_to "home", root_path %>
 
 <table>
   <tr>
     <th>Name</th>
+    <th>Dancers</th>
   </tr>
   <% @groups.each do |group| %>
     <tr>
       <td><%= group.name %></td>
+      <td>
+        <ul>
+          <% group.dancers.each do |d| %>
+            <li><%= d.name %> <%= link_to "edit dancer score", edit_dancer_path(d.id) %></li>
+          <% end %>
+        </ul>
+      </td>
     </tr>
   <% end %>
 </table>
