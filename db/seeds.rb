@@ -1,7 +1,7 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created along side the database with db:setup).
 
-def gen_scores
+def gen_scores(prod = false)
   score_percentages = {
       :theme => 20,
       :choreography => 15,
@@ -14,9 +14,16 @@ def gen_scores
 
   scores = {}
   score_percentages.each do |c,p|
-    r = Random.rand(0..p)
-    scores[c] = r
+    if prod
+      scores[c] = 0
+    else
+      r = Random.rand(0..p)
+      scores[c] = r
+    end
   end
+
+  total = ScoresHelper.total_score(scores)
+  scores[:total] = total
 
   scores
 end
@@ -55,9 +62,6 @@ if Rails.env.development?
   (1..49).each do |num|
     scores = gen_scores
 
-    total = ScoresHelper.total_score(scores)
-    scores[:total] = total
-
     scores[:dancer_id] = dancers[Random.rand(drange)].id
     scores[:user_id] = users[Random.rand(urange)].id
     s = Score.create(scores)
@@ -80,7 +84,7 @@ if Rails.env.production?
       d = Dancer.create(:name => dancer, :group_id => g.id)
       d.save
       users.each do |_n,u|
-        s = Score.create(gen_scores.merge(:dancer_id => d.id, :user_id => u.id, :total => 0))
+        s = Score.create(gen_scores(true).merge(:dancer_id => d.id, :user_id => u.id))
         s.save
       end
     end
