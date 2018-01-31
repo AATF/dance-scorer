@@ -4,21 +4,20 @@
 
 back to <%= link_to "home", root_path %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Dancers</th>
-  </tr>
-  <% @groups.each do |group| %>
-    <tr>
-      <td><%= group.name %></td>
-      <td>
-        <ul>
-          <% group.dancers.each do |d| %>
-            <li><%= d.name %> <%= link_to "edit dancer score", edit_dancer_path(d.id) %></li>
-          <% end %>
-        </ul>
-      </td>
-    </tr>
-  <% end %>
-</table>
+<% @groups.each do |group| %>
+    <h2><%= group.name %></h2>
+
+    <table class="table">
+      <tr>
+        <th>dancer Name</th>
+        <th>average score</th>
+      </tr>
+      <% group.dancers.each do |d| %>
+        <tr>
+          <td><%= d.name %></td>
+          <td><%= ScoresHelper.average(d.scores.map {|x|x.total}) %></td>
+        </tr>
+      <% end %>
+    </table>
+    <h3>top dancer: <%= ScoresHelper.top_scorer(group) %></h3>
+<% end %>

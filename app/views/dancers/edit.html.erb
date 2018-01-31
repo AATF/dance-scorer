@@ -2,34 +2,37 @@
 
 <h2>edit dancer score for <%= @dancer.name %></h2>
 
+<p>Total score: <%= @score.total %></p>
+
 <%= form_for @score do |f| %>
-  <%= f.label "theme" %>
-  <%= f.number_field :theme %>
-  <br />
+    <%= f.label "theme" %>
+    <%= f.number_field :theme %>
+    <br />
 
-  <%= f.label "choreography" %>
-  <%= f.number_field :choreography %>
-  <br />
+    <%= f.label "choreography" %>
+    <%= f.number_field :choreography %>
+    <br />
 
-  <%= f.label "technique" %>
-  <%= f.number_field :technique %>
-  <br />
+    <%= f.label "technique" %>
+    <%= f.number_field :technique %>
+    <br />
 
-  <%= f.label "presentation" %>
-  <%= f.number_field :presentation %>
-  <br />
+    <%= f.label "presentation" %>
+    <%= f.number_field :presentation %>
+    <br />
 
-  <%= f.label "costume" %>
-  <%= f.number_field :costume %>
-  <br />
+    <%= f.label "costume" %>
+    <%= f.number_field :costume %>
+    <br />
 
-  <%= f.label "music" %>
-  <%= f.number_field :music %>
-  <br />
+    <%= f.label "music" %>
+    <%= f.number_field :music %>
+    <br />
+    <br />
 
-  <%= f.label "violation" %>
-  <%= f.number_field :violation %>
-  <br />
+    <%= f.label "violation" %>
+    <%= f.number_field :violation %>
+    <br />
 
-  <%= f.submit("Submit") %>
+    <%= f.submit("Submit") %>
 <% end %>

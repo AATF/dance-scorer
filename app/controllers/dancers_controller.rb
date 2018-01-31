@@ -12,6 +12,6 @@ class DancersController < ApplicationController
 
   def edit
     @dancer = Dancer.find(params[:id])
-    @score = Score.find_by(:dancer_id => params[:id], :user_id => session[:user_id])
+    @score = Score.find_by(:dancer_id => dancer.id, :user_id => session[:user_id])
   end
 end

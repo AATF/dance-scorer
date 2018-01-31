@@ -2,12 +2,12 @@
 
 <h1>Login</h1>
 
-<%= form_tag(sessions_path) do %>
+<%= form_tag(sessions_path, class: "form-group") do %>
     <%= label(:session, :username, "Username") %>
-    <%= text_field(:session, :username) %>
+    <%= text_field(:session, :username, class: "form-control") %>
 
     <%= label(:session, :password, "Password") %>
-    <%= password_field(:session, :password) %>
+    <%= password_field(:session, :password, class: "form-control") %>
 
     <%= submit_tag("Submit") %>
 <% end %>

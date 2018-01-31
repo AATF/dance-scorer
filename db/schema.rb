@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180131063224) do
+ActiveRecord::Schema.define(version: 20180131090151) do
 
   create_table "dancers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20180131063224) do
     t.datetime "updated_at",   null: false
     t.integer  "dancer_id",    null: false
     t.integer  "user_id",      null: false
+    t.integer  "total",        null: false
     t.index ["dancer_id"], name: "fk_rails_5b03197483", using: :btree
     t.index ["user_id"], name: "fk_rails_f5dcd5d06f", using: :btree
   end

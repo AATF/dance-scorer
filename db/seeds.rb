@@ -21,12 +21,15 @@ def gen_scores
   scores
 end
 
-u1 = User.create(:username => "tu1", :name => "test1 user1", :password => "1")
-u1.save
-p u1
-u2 = User.create(:username => "tuser2", :name => "another2 user2", :password => "2")
-u2.save
-p u2
+users = {}
+urange = (1..2)
+urange.each do |num|
+  u = User.create(:username => "tuser#{num}", :name => "another#{num} user#{num}", :password => "#{num}")
+  u.save
+  p u
+
+  users[num] = u
+end
 
 groups = {}
 grange = (1..3)
@@ -39,7 +42,7 @@ grange.each do |num|
 end
 
 dancers = {}
-drange = (1..5)
+drange = (1..9)
 drange.each do |num|
   d = Dancer.create(:name => "dance#{num} person#{num}", :group_id => groups[Random.rand(grange)].id)
   d.save
@@ -48,30 +51,15 @@ drange.each do |num|
   dancers[num] = d
 end
 
-(1..10).each do |num|
-  scores1 = gen_scores
-  scores1[:dancer_id] = dancers[Random.rand(drange)].id
-  scores1[:user_id] = u1.id
-  s1 = Score.create(scores1)
-  s1.save
-  p s1
+(1..22).each do |num|
+  scores = gen_scores
 
-  scores2 = gen_scores
-  scores2[:dancer_id] = dancers[Random.rand(drange)].id
-  scores2[:user_id] = u1.id
-  s2 = Score.create(scores2)
-  p s2
+  total = ScoresHelper.total_score(scores)
+  scores[:total] = total
 
-  scores3 = gen_scores
-  scores3[:dancer_id] = dancers[Random.rand(drange)].id
-  scores3[:user_id] = u2.id
-  s3 = Score.create(scores2)
-  s3.save
-  p s3
-
-  scores4 = gen_scores
-  scores4[:dancer_id] = dancers[Random.rand(drange)].id
-  scores4[:user_id] = u2.id
-  s4 = Score.create(scores4)
-  p s4
+  scores[:dancer_id] = dancers[Random.rand(drange)].id
+  scores[:user_id] = users[Random.rand(urange)].id
+  s = Score.create(scores)
+  s.save
+  p s
 end
