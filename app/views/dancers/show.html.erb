@@ -1,13 +1,15 @@
 <% @title = "dancer info" %>
 
-<h1>Dancer info for <%= @dancer.name %></h1>
+<h1>Dancer Info for <%= @dancer.name %></h1>
 
 <table>
   <tr>
     <th>Group</th>
+    <th>Dancer Name</th>
   </tr>
     <tr>
       <td><%= @dancer.group.name %></td>
+      <td><%= @dancer.dance_name %></td>
     </tr>
 </table>
 

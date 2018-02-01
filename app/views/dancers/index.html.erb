@@ -1,17 +1,19 @@
-<% @title = "dancer index" %>
+<% @title = "Dancer Index" %>
 
-<h1>Dancers index</h1>
+<h1>Dancers Index</h1>
 
 back to <%= link_to "home", root_path %>
 
 <table>
   <tr>
     <th>Name</th>
+    <th>Dance Name</th>
     <th>Group</th>
   </tr>
   <% @dancers.each do |dancer| %>
     <tr>
       <td><%= dancer.name %></td>
+      <td><%= dancer.dance_name %></td>
       <td><%= dancer.group.name %></td>
     </tr>
   <% end %>

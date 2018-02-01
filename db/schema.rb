@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180131210843) do
+ActiveRecord::Schema.define(version: 20180201033612) do
 
   create_table "dancers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "group_id",   null: false
+    t.string   "dance_name", null: false
     t.index ["group_id"], name: "fk_rails_051c369b06", using: :btree
   end
 

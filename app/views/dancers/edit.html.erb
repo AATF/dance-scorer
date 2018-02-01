@@ -1,8 +1,9 @@
 <% @title = "Edit dancer" %>
 
-<h2>edit dancer score for <%= @dancer.name %></h2>
+<h2>Edit Dancer Score for <%= @dancer.name %></h2>
+<h2>Dance Name <%= @dancer.dance_name %></h2>
 
-<p>Total score: <%= @score.total %></p>
+<p>Total Score: <%= @score.total %></p>
 
 <%= form_for @score do |f| %>
     <%= f.label "theme" %>
