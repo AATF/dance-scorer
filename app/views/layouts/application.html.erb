@@ -17,7 +17,7 @@
 
     <%= link_to "Scores", scores_path, class: "nav-link" %>
 
-    <span class="navbar-text">Hello <%= @current_user.name %></span>
+    <span class="navbar-text navbar-right">Hello <%= @current_user.name %></span>
   </nav>
 
     <% if flash[:notice] %>

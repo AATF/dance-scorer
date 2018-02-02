@@ -1,34 +1,88 @@
 {
   "solo-age7_15": [
-    "AO, STELLINA",
-    "CHOU SOPHIA",
-    "LIU, XIN YU",
-    "JI, ZOEY",
-    "HANG, KATHERINE",
-    "CHOY, JAIME",
-    "WU, JANET",
-    "ENG, AGNES",
-    "SONG, AMY",
-    "CHEN, EMMY",
-    "GUO, LILY",
-    "SHIM, MICHELLE",
-    "MARK, CELINE",
-    "CHOI, JACQUELINE"
+    {
+      "AO, STELLINA": "CHINESE KNOT"
+    },
+    {
+      "CHOU SOPHIA": "CHINESE BARBIE"
+    },
+    {
+      "LIU, XIN YU": "SKY EDGE"
+    },
+    {
+      "JI, ZOEY": "JOLLY GIRL"
+    },
+    {
+      "HANG, KATHERINE": "DUNHUANG FAIRIES"
+    },
+    {
+      "CHOY, JAIME": "THE LEGEND OF MULAN"
+    },
+    {
+      "WU, JANET": "COCOON BREAK"
+    },
+    {
+      "ENG, AGNES": "INTO TIBET"
+    },
+    {
+      "SONG, AMY": "WARRIOR SWORD DANCE"
+    },
+    {
+      "CHEN, EMMY": "DUNHUANG MUSIC DRUM"
+    },
+    {
+      "GUO, LILY": "FROM THE PLATEAU OF TIBET"
+    },
+    {
+      "SHIM, MICHELLE": "FRAGRANCE OF FLOWERS BUD"
+    },
+    {
+      "MARK, CELINE": "THE MONGOLIAN"
+    },
+    {
+      "CHOI, JACQUELINE": "NYMPH OF MOON RIVER"
+    }
   ],
   "solo-age16up": [
-    "HAU, ANNIE",
-    "HUANG, VIVIAN",
-    "CHEUNG, MIRANDA",
-    "LIU, YIYING",
-    "LI, JESSICA",
-    "WANG, KATIE",
-    "LUU, CHRISTIEN",
-    "LI JASMINE",
-    "WANG, MARY",
-    "WANG, VIVIAN",
-    "HONG, KATHLEEN",
-    "AN ANGELA",
-    "FUNG, REBECCA"
+    {
+      "HAU, ANNIE": "INFANTA"
+    },
+    {
+      "HUANG, VIVIAN": "THE POEM OF LILY FLOWER"
+    },
+    {
+      "CHEUNG, MIRANDA": "MIAO TRIBE GIRL"
+    },
+    {
+      "LIU, YIYING": "AMAZING REBOUND PIPA"
+    },
+    {
+      "LI, JESSICA": "THE BEAUTIFUL DAI TRIBE GIRL"
+    },
+    {
+      "WANG, KATIE": "THE PALACE COURT LADY"
+    },
+    {
+      "LUU, CHRISTIEN": "XING ZHANG BOWL DANCE"
+    },
+    {
+      "LI JASMINE": "FAREWELL MY CONCUBINE"
+    },
+    {
+      "WANG, MARY": "JASMINE IN JUNE"
+    },
+    {
+      "WANG, VIVIAN": "LUOSHUI BEAUTY"
+    },
+    {
+      "HONG, KATHLEEN": "KYO BANG MU"
+    },
+    {
+      "AN ANGELA": "SCARF DANCE (HWA KWAN MU)"
+    },
+    {
+      "FUNG, REBECCA": "THE WHITE FOX DANCE"
+    }
   ],
   "duo-trio-age7_15": [
     "CHOU, SOPHIA and LIU, XIN YU",

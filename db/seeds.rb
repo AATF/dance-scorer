@@ -84,8 +84,8 @@ if Rails.env.production?
   json.each do |group,names|
     g = Group.create(:name => group)
     g.save
-    names.each do |dancer|
-      d = Dancer.create(:name => dancer, :group_id => g.id)
+    names.each do |dancer,dance|
+      d = Dancer.create(:name => dancer, :group_id => g.id, :dance_name => dance)
       d.save
       users.each do |_n,u|
         s = Score.create(gen_scores(true).merge(:dancer_id => d.id, :user_id => u.id))
