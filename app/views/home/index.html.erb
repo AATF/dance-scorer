@@ -2,16 +2,9 @@
 
 <h1>Home Page</h1>
 
-<%= link_to "Login", login_path %>
-<br />
-<%= link_to "Logout", logout_path %>
-<br />
-<br />
-
-<%= link_to "Groups Page", groups_path %>
-<br />
-<%= link_to "Users Page", users_path %>
-<br />
-<%= link_to "Dancers Page", dancers_path %>
-<br />
-<%= link_to "Scores Page", scores_path %>
+<table>
+  <%= render "scores/table" %>
+  <% @scores.each do |score| %>
+    <%= render "scores/score", :score => score %>
+  <% end %>
+</table>

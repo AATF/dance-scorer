@@ -2,6 +2,8 @@
 
 <h1>Login</h1>
 
+Back to <%= link_to "Home", root_path %>
+
 <%= form_tag(sessions_path, class: "form-group") do %>
     <%= label(:session, :username, "Username") %>
     <%= text_field(:session, :username, class: "form-control") %>

@@ -1,16 +1,24 @@
 class SessionsController < ApplicationController
+  def new
+    if session[:logged_in]
+      flash[:notice] = "You are already logged in"
+
+      redirect_to root_path
+    end
+  end
+
   def create
     user = User.where(:username => params[:session][:username]).first
-    p user
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
+      session[:logged_in] = true
       if user.admin?
         session[:admin] = true
       end
 
       redirect_to root_path
     else
-      flash[:error] = "incorrect username and/or password"
+      flash[:warning] = "Incorrect username and/or password"
     end
   end
 

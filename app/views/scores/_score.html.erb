@@ -10,5 +10,7 @@
   <td><%= score.violation %></td>
   <td><%= score.total %></td>
   <td><%= score.user.name %></td>
-  <td><%= link_to "edit score", edit_dancer_path(score.dancer_id) %></td>
+  <% if session[:logged_in] %>
+    <td><%= link_to "edit score", edit_dancer_path(score.dancer_id) %></td>
+  <% end %>
 </tr>

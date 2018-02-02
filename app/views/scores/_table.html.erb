@@ -10,5 +10,7 @@
   <th>Violation</th>
   <th>Total</th>
   <th>Judge Name</th>
-  <th>Edit Score</th>
+  <% if session[:logged_in] %>
+    <th>Edit Score</th>
+  <% end %>
 </tr>
