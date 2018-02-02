@@ -80,6 +80,7 @@ if Rails.env.production?
   file = ARGV[1]
 
   json = JSON.load(File.open(file))
+  p json
 
   json.each do |group,names|
     g = Group.create(:name => group)
@@ -87,9 +88,12 @@ if Rails.env.production?
     names.each do |dancer,dance|
       d = Dancer.create(:name => dancer, :group_id => g.id, :dance_name => dance)
       d.save
+      p d
+
       users.each do |_n,u|
         s = Score.create(gen_scores(true).merge(:dancer_id => d.id, :user_id => u.id))
         s.save
+        p s
       end
     end
   end
