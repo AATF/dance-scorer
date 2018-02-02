@@ -31,12 +31,16 @@ end
 users = {}
 urange = (1..4)
 urange.each do |num|
-  u = User.create(:username => "judge#{num}", :name => "judge #{num}", :password => "judge#{num}")
+  u = User.create(:username => "judge#{num}", :name => "judge #{num}", :password => "judge#{num}", :admin => false)
   u.save
   p u
 
   users[num] = u
 end
+
+a = User.create(:username => "admin", :name => "admin user", :password => "admin", :admin => true)
+a.save
+p a
 
 if Rails.env.development?
   groups = {}
@@ -52,7 +56,7 @@ if Rails.env.development?
   dancers = {}
   drange = (1..12)
   drange.each do |num|
-    d = Dancer.create(:name => "dance#{num} person#{num}", :group_id => groups[Random.rand(grange)].id)
+    d = Dancer.create(:name => "dance#{num} person#{num}", :group_id => groups[Random.rand(grange)].id, :dance_name => "dance name #{num}")
     d.save
     p d
 
@@ -77,10 +81,10 @@ if Rails.env.production?
 
   json = JSON.load(File.open(file))
 
-  json.each do |group,dancers|
+  json.each do |group,names|
     g = Group.create(:name => group)
     g.save
-    dancers.each do |dancer|
+    names.each do |dancer|
       d = Dancer.create(:name => dancer, :group_id => g.id)
       d.save
       users.each do |_n,u|

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180201033612) do
+ActiveRecord::Schema.define(version: 20180201035942) do
 
   create_table "dancers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20180201033612) do
     t.datetime "updated_at",      null: false
     t.string   "password_digest", null: false
     t.string   "username",        null: false
+    t.boolean  "admin",           null: false
     t.index ["name"], name: "index_users_on_name", using: :btree
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end

@@ -2,7 +2,11 @@ class ScoresController < ApplicationController
   before_action :require_login
 
   def index
-    @scores = Score.where(:user_id => session[:user_id])
+    @scores = if session[:admin]
+                Score.all
+              else
+                Score.where(:user_id => session[:user_id])
+              end
   end
 
   def update
@@ -16,6 +20,6 @@ class ScoresController < ApplicationController
     s.update!(scores)
 
     flash[:notice] = "Successfully updated scores"
-    redirect_to dancers_path
+    redirect_to scores_path
   end
 end
