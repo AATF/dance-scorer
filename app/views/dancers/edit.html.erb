@@ -1,38 +1,38 @@
 <% @title = "Edit dancer" %>
+<% @header = "Edit Dancer Score for #{@dancer.name}" %>
 
-<h2>Edit Dancer Score for <%= @dancer.name %></h2>
-<h2>Dance Name <%= @dancer.dance_name %></h2>
+<h2>Dance Name: <%= @dancer.dance_name %></h2>
 
 <p>Total Score: <%= @score.total %></p>
 
-<%= form_for @score do |f| %>
+<%= form_for @score, html: { class: "form-control" } do |f| %>
     <%= f.label "theme" %>
-    <%= f.number_field :theme %>
+    <%= f.number_field :theme, class: "form-control" %>
     <br />
 
     <%= f.label "choreography" %>
-    <%= f.number_field :choreography %>
+    <%= f.number_field :choreography, class: "form-control" %>
     <br />
 
     <%= f.label "technique" %>
-    <%= f.number_field :technique %>
+    <%= f.number_field :technique, class: "form-control" %>
     <br />
 
     <%= f.label "presentation" %>
-    <%= f.number_field :presentation %>
+    <%= f.number_field :presentation, class: "form-control" %>
     <br />
 
     <%= f.label "costume" %>
-    <%= f.number_field :costume %>
+    <%= f.number_field :costume, class: "form-control" %>
     <br />
 
     <%= f.label "music" %>
-    <%= f.number_field :music %>
+    <%= f.number_field :music, class: "form-control" %>
     <br />
     <br />
 
     <%= f.label "violation" %>
-    <%= f.number_field :violation %>
+    <%= f.number_field :violation, class: "form-control" %>
     <br />
 
     <%= f.submit("Submit") %>

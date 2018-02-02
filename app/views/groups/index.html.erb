@@ -1,8 +1,5 @@
 <% @title = "Groups" %>
-
-<h1>Groups Index</h1>
-
-Back to <%= link_to "Home", root_path %>
+<% @header = "Groups Index" %>
 
 <% @groups.each do |group| %>
     <h2><%= group.name %></h2>

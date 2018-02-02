@@ -1,8 +1,7 @@
 <% @title = "Home" %>
+<% @header = "Home Page" %>
 
-<h1>Home Page</h1>
-
-<table>
+<table class="table">
   <%= render "scores/table" %>
   <% @scores.each do |score| %>
     <%= render "scores/score", :score => score %>
