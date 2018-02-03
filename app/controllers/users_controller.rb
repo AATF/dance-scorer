@@ -9,4 +9,10 @@ class UsersController < ApplicationController
   def edit
     @user = User.find_by_id(params[:id])
   end
+
+  def update
+    params.permit!
+    params[:user][:id] = params[:id]
+    User.update(params[:user])
+  end
 end

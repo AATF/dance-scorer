@@ -7,7 +7,7 @@
 
 <%= form_for @score, html: { class: "form-control" } do |f| %>
   <%= f.label :theme, "Theme" %>
-  <%= f.text_field :theme, class: "form-control" %>
+  <%= f.text_field :theme, class: "form-control", autofocus: true %>
 
   <%= f.label :presentation, "Presentation" %>
   <%= f.text_field :presentation, class: "form-control" %>
