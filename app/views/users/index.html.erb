@@ -1,18 +1,19 @@
-<% @title = "users" %>
+<% @title = "Users" %>
+<% @header = "Users" %>
 
-<% @header = "Judges" %>
-
-Go to <%= link_to "Home", root_path %>
-
-<table>
+<table class="table">
   <tr>
     <th>Username</th>
     <th>Name</th>
+    <th>Edit User</th>
   </tr>
   <% @users.each do |user| %>
     <tr>
       <td><%= user.username %></td>
       <td><%= user.name %></td>
+      <% if @current_user.admin? %>
+        <td><%= link_to "Edit User", edit_user_path(user.id) %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
