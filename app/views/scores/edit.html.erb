@@ -1,0 +1,38 @@
+<% @title = "Edit Dancer Score" %>
+<% @header = "Edit Dancer Score for #{@dancer.name} for #{@score.user.name}" %>
+
+<h2>Dance Name: <%= @dancer.dance_name %></h2>
+
+<h3>Total Score: <%= @score.total %></h3>
+
+<%= form_for @score, html: { class: "form-control" } do |f| %>
+  <%= f.label :theme, "Theme" %>
+  <%= f.number_field :theme, class: "form-control" %>
+
+  <%= f.label :choreography, "Choreography" %>
+  <%= f.number_field :choreography, class: "form-control" %>
+  <br />
+
+  <%= f.label :technique, "Technique" %>
+  <%= f.number_field :technique, class: "form-control" %>
+  <br />
+
+  <%= f.label :presentation, "Presentation" %>
+  <%= f.number_field :presentation, class: "form-control" %>
+  <br />
+
+  <%= f.label :costume, "Costume" %>
+  <%= f.number_field :costume, class: "form-control" %>
+  <br />
+
+  <%= f.label :music, "Music" %>
+  <%= f.number_field :music, class: "form-control" %>
+  <br />
+  <br />
+
+  <%= f.label :violation, "Violation" %>
+  <%= f.number_field :violation, class: "form-control" %>
+  <br />
+
+  <%= f.button "Submit", class: "btn btn-primary" %>
+<% end %>

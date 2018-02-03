@@ -6,14 +6,20 @@
     <th>Name</th>
     <th>Dance Name</th>
     <th>Group</th>
-    <th>Edit Score</th>
+    <th>Performance Order</th>
+    <% if @current_user.admin? %>
+      <th>Edit Dancer</th>
+    <% end %>
   </tr>
   <% @dancers.each do |dancer| %>
     <tr>
       <td><%= dancer.name %></td>
       <td><%= dancer.dance_name %></td>
       <td><%= dancer.group.name %></td>
-      <td><%= link_to "Edit Score", edit_dancer_path(dancer.id) %></td>
+      <td><%= dancer.performance_order %></td>
+      <% if @current_user.admin? %>
+        <td><%= link_to "Edit Dancer", edit_dancer_path(dancer.id) %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

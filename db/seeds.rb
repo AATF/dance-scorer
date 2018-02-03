@@ -86,7 +86,7 @@ if Rails.env.production?
     g = Group.create(:name => group)
     g.save
     names.each do |dancer,dance|
-      d = Dancer.create(:name => dancer, :group_id => g.id, :dance_name => dance)
+      d = Dancer.create(:name => dancer, :group_id => g.id, :dance_name => dance, :performance_order => 1)
       d.save
       p d
 

@@ -31,7 +31,7 @@
       <td><%= score.total %></td>
       <td><%= score.user.name %></td>
       <% if session[:logged_in] %>
-        <td><%= link_to "Edit Score", edit_dancer_path(score.dancer_id) %></td>
+        <td><%= link_to "Edit Score", edit_score_path(score.dancer_id, :user_id => score.user.id) %></td>
       <% end %>
     </tr>
   <% end %>

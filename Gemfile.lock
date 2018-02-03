@@ -213,6 +213,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.0.0)
   rails_12factor
+  railties
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   shoulda
@@ -223,4 +224,4 @@ DEPENDENCIES
   valid_attribute
 
 BUNDLED WITH
-   1.15.4
+   1.16.0
