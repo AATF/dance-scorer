@@ -7,26 +7,26 @@
 
 <%= form_for @score, html: { class: "form-control" } do |f| %>
   <%= f.label :theme, "Theme" %>
-  <%= f.number_field :theme, class: "form-control" %>
+  <%= f.text_field :theme, class: "form-control" %>
 
   <%= f.label :presentation, "Presentation" %>
-  <%= f.number_field :presentation, class: "form-control" %>
+  <%= f.text_field :presentation, class: "form-control" %>
 
   <%= f.label :technique, "Technique" %>
-  <%= f.number_field :technique, class: "form-control" %>
+  <%= f.text_field :technique, class: "form-control" %>
 
   <%= f.label :choreography, "Choreography" %>
-  <%= f.number_field :choreography, class: "form-control" %>
+  <%= f.text_field :choreography, class: "form-control" %>
 
   <%= f.label :costume, "Costume" %>
-  <%= f.number_field :costume, class: "form-control" %>
+  <%= f.text_field :costume, class: "form-control" %>
 
   <%= f.label :music, "Music" %>
-  <%= f.number_field :music, class: "form-control" %>
+  <%= f.text_field :music, class: "form-control" %>
   <br />
 
   <%= f.label :violation, "Violation" %>
-  <%= f.number_field :violation, class: "form-control" %>
+  <%= f.text_field :violation, class: "form-control" %>
 
   <%= f.button "Submit", class: "btn btn-primary" %>
 <% end %>
