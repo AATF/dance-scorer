@@ -1,17 +1,19 @@
 <% @title = "Dancer Index" %>
-<% @header = "Dancers Index" %>
+<% @header = "Dancers" %>
 
 <table class="table">
   <tr>
     <th>Name</th>
     <th>Dance Name</th>
     <th>Group</th>
+    <th>Edit Score</th>
   </tr>
   <% @dancers.each do |dancer| %>
     <tr>
       <td><%= dancer.name %></td>
       <td><%= dancer.dance_name %></td>
       <td><%= dancer.group.name %></td>
+      <td><%= link_to "Edit Score", edit_dancer_path(dancer.id) %></td>
     </tr>
   <% end %>
 </table>

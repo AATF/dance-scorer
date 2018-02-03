@@ -1,9 +1,4 @@
 <% @title = "Scores" %>
-<% @header = "Scores Index" %>
+<% @header = "Scores" %>
 
-<table class="table">
 <%= render "scores/table" %>
-<% @scores.each do |score| %>
-  <%= render "scores/score", :score => score %>
-<% end %>
-</table>

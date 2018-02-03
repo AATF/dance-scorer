@@ -1,20 +1,4 @@
 <% @title = "Groups" %>
-<% @header = "Groups Index" %>
+<% @header = "Groups" %>
 
-<% @groups.each do |group| %>
-    <h2><%= group.name %></h2>
-
-    <table class="table">
-      <tr>
-        <th>Dancer Name</th>
-        <th>Average Score</th>
-      </tr>
-      <% group.dancers.each do |d| %>
-        <tr>
-          <td><%= d.name %></td>
-          <td><%= ScoresHelper.average(d.scores.map {|x|x.total}) %></td>
-        </tr>
-      <% end %>
-    </table>
-    <h3>Top Dancer: <%= ScoresHelper.top_scorer(group) %></h3>
-<% end %>
+<%= render "groups/table" %>

@@ -1,6 +1,9 @@
 class ScoresController < ApplicationController
   before_action :require_login
 
+  def new
+  end
+
   def index
     @scores = if session[:admin]
                 Score.all

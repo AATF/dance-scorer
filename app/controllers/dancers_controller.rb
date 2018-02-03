@@ -12,10 +12,15 @@ class DancersController < ApplicationController
 
   def edit
     @dancer = Dancer.find(params[:id])
-    @score = if session[:admin]
-               Score.find_by(:dancer_id => @dancer.id)
-             else
-               Score.find_by(:dancer_id => @dancer.id, :user_id => session[:user_id])
-             end
+    if session[:admin]
+      @score = Score.find_by(:dancer_id => @dancer.id)
+    else
+      score = Score.find_by(:dancer_id => @dancer.id, :user_id => session[:user_id])
+      if score
+        @score = score
+      else
+        redirect_to new_score_path
+      end
+    end
   end
 end
