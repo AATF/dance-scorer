@@ -10,7 +10,8 @@ module ScoresHelper
   end
 
   def self.average(totals)
-    totals.inject { |sum, el| sum + el }.to_f / totals.length
+    avg = totals.inject { |sum, el| sum + el }.to_f / totals.length
+    '%.2f' % avg
   end
 
   def self.total_score(scores)
