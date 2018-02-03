@@ -29,7 +29,7 @@ class ScoresController < ApplicationController
   def update
     params.permit!
 
-    scores = params[:score].transform_values { |v| v.to_i }
+    scores = params[:score].transform_values { |v| v.to_f }
     total = ScoresHelper.total_score(scores)
 
     scores[:total] = total
