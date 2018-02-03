@@ -8,16 +8,16 @@ class ScoresController < ApplicationController
     @scores = if session[:admin]
                 Score.all
               else
-                Score.where(:user_id => session[:user_id])
+                Score.where(user_id: session[:user_id])
               end
   end
 
   def edit
     @dancer = Dancer.find(params[:id])
     if session[:admin]
-      @score = Score.find_by(:dancer_id => @dancer.id, :user_id => params[:user_id])
+      @score = Score.find_by(dancer_id: @dancer.id, user_id: params[:user_id])
     else
-      score = Score.find_by(:dancer_id => @dancer.id, :user_id => session[:user_id])
+      score = Score.find_by(dancer_id: @dancer.id, user_id: session[:user_id])
       if score
         @score = score
       else
