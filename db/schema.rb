@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180203075518) do
+ActiveRecord::Schema.define(version: 20180203204201) do
 
   create_table "dancers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                          null: false
@@ -30,18 +30,18 @@ ActiveRecord::Schema.define(version: 20180203075518) do
   end
 
   create_table "scores", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "theme",        null: false
-    t.integer  "choreography", null: false
-    t.integer  "technique",    null: false
-    t.integer  "presentation", null: false
-    t.integer  "costume",      null: false
-    t.integer  "music",        null: false
-    t.integer  "violation",    null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "dancer_id",    null: false
-    t.integer  "user_id",      null: false
-    t.integer  "total",        null: false
+    t.float    "theme",        limit: 24, null: false
+    t.float    "choreography", limit: 24, null: false
+    t.float    "technique",    limit: 24, null: false
+    t.float    "presentation", limit: 24, null: false
+    t.float    "costume",      limit: 24, null: false
+    t.float    "music",        limit: 24, null: false
+    t.float    "violation",    limit: 24, null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "dancer_id",               null: false
+    t.integer  "user_id",                 null: false
+    t.float    "total",        limit: 24, null: false
     t.index ["dancer_id"], name: "fk_rails_5b03197483", using: :btree
     t.index ["total"], name: "index_scores_on_total", using: :btree
     t.index ["user_id"], name: "fk_rails_f5dcd5d06f", using: :btree
