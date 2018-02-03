@@ -1,0 +1,13 @@
+# config/app.yml for rails-settings-cached
+defaults: &defaults
+  public_scores: false
+
+development:
+  <<: *defaults
+  public_scores: true
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

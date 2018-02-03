@@ -1,10 +1,10 @@
 <% @title = "Login" %>
 <% @header = "Login" %>
 
-<%= form_tag(sessions_path, class: "form-group") do %>
-    <%= text_field(:session, :username, class: "form-control", placeholder: "Username") %>
+<%= form_tag sessions_path, class: "form-group" do %>
+    <%= text_field :session, :username, class: "form-control", placeholder: "Username", autofocus: true %>
 
-    <%= password_field(:session, :password, class: "form-control", placeholder: "Password") %>
+    <%= password_field :session, :password, class: "form-control", placeholder: "Password" %>
 
-    <%= submit_tag("Submit") %>
+    <%= submit_tag "Submit" %>
 <% end %>

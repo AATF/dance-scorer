@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180203204201) do
+ActiveRecord::Schema.define(version: 20180203224131) do
 
   create_table "dancers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                          null: false
@@ -45,6 +45,16 @@ ActiveRecord::Schema.define(version: 20180203204201) do
     t.index ["dancer_id"], name: "fk_rails_5b03197483", using: :btree
     t.index ["total"], name: "index_scores_on_total", using: :btree
     t.index ["user_id"], name: "fk_rails_f5dcd5d06f", using: :btree
+  end
+
+  create_table "settings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "var",                      null: false
+    t.text     "value",      limit: 65535
+    t.integer  "thing_id"
+    t.string   "thing_type", limit: 30
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["thing_type", "thing_id", "var"], name: "index_settings_on_thing_type_and_thing_id_and_var", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

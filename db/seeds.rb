@@ -72,6 +72,9 @@ if Rails.env.development?
     s.save
     p s
   end
+
+  s = Setting.public_scores = true
+  p s
 end
 
 if Rails.env.production?
@@ -97,4 +100,7 @@ if Rails.env.production?
       end
     end
   end
+
+  s = Setting.public_scores = false
+  p s
 end
