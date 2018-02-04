@@ -1,0 +1,19 @@
+<% @title = "Admin" %>
+<% @header = "Admin" %>
+
+<%= link_to "Add New Setting", new_admin_setting_path %>
+
+<table class="table">
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Value</th>
+    <th scope="col">Edit Setting</th>
+  </tr>
+  <tr>
+    <% @settings.each do |setting| %>
+      <td><%= setting.var %></td>
+      <td><%= setting.value %></td>
+      <td><%= link_to "Edit Setting", edit_admin_setting_path(setting.id) %></td>
+    <% end %>
+  </tr>
+</table>

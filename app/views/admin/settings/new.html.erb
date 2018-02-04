@@ -1,0 +1,10 @@
+<% @title = "New Setting" %>
+<% @header = "Add New Setting" %>
+
+<%= form_for @setting, url: admin_setting_path(@setting.id), method: "patch", class: "form-control" do %>
+  <%= s.label_tag :val, "Name" %>
+  <%= s.text_field_tag :var %>
+
+  <%= s.label_tag :value, "Value" %>
+  <%= text_field_tag :value %>
+<% end %>
