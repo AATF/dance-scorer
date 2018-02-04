@@ -6,27 +6,40 @@
 <h3>Total Score: <%= @score.total %></h3>
 
 <%= form_for @score, html: { class: "form-control" } do |f| %>
-  <%= f.label :theme, "Theme" %>
-  <%= f.text_field :theme, class: "form-control", autofocus: true %>
+  <div class="form-group">
+    <%= f.label :theme, "Theme" %>
+    <%= f.text_field :theme, class: "form-control", autofocus: true %>
+  </div>
 
-  <%= f.label :presentation, "Presentation" %>
-  <%= f.text_field :presentation, class: "form-control" %>
+  <div class="form-group">
+    <%= f.label :presentation, "Presentation" %>
+    <%= f.text_field :presentation, class: "form-control" %>
+  </div>
 
-  <%= f.label :technique, "Technique" %>
-  <%= f.text_field :technique, class: "form-control" %>
+  <div class="form-group">
+    <%= f.label :technique, "Technique" %>
+    <%= f.text_field :technique, class: "form-control" %>
+  </div>
 
-  <%= f.label :choreography, "Choreography" %>
-  <%= f.text_field :choreography, class: "form-control" %>
+  <div class="form-group">
+    <%= f.label :choreography, "Choreography" %>
+    <%= f.text_field :choreography, class: "form-control" %>
+  </div>
 
-  <%= f.label :costume, "Costume" %>
-  <%= f.text_field :costume, class: "form-control" %>
+  <div class="form-group">
+    <%= f.label :costume, "Costume" %>
+    <%= f.text_field :costume, class: "form-control" %>
+  </div>
 
-  <%= f.label :music, "Music" %>
-  <%= f.text_field :music, class: "form-control" %>
-  <br />
+  <div class="form-group">
+    <%= f.label :music, "Music" %>
+    <%= f.text_field :music, class: "form-control" %>
+  </div>
 
-  <%= f.label :violation, "Violation" %>
-  <%= f.text_field :violation, class: "form-control" %>
+  <div class="form-group">
+    <%= f.label :violation, "Violation" %>
+    <%= f.text_field :violation, class: "form-control" %>
+  </div>
 
   <%= f.button "Submit", class: "btn btn-primary" %>
 <% end %>

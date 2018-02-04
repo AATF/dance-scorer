@@ -1,12 +1,16 @@
 <% @title = "Edit Dancer" %>
 <% @header = "Edit Dancer #{@dancer.name}" %>
 
-<%= form_for @dancer, html: { class: "form-control" } do |f| %>
+<%= form_for @dancer do |f| %>
+  <div class="form-group">
     <%= f.label :name, "Name" %>
     <%= f.text_field :name, class: "form-control" %>
+  </div>
 
+  <div class="form-group">
     <%= f.label :dance_name, "Dance Name" %>
     <%= f.text_field :dance_name, class: "form-control" %>
+  </div>
 
     <%= f.button "Submit", class: "btn btn-primary" %>
 <% end %>
