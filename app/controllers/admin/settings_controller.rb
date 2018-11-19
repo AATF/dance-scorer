@@ -1,17 +1,20 @@
 class Admin; class SettingsController < ApplicationController
   def edit
-    @setting = Setting.find_by_id(params[:id])
+    @setting = Admin::Setting.find_by_id(params[:id])
   end
 
   def update
-    Setting.update(var: params[:id], value: params[:setting][:value])
+    params.permit!
+    Admin::Setting.update(params[:setting])
+
+    redirect_to admin_settings_path
   end
 
   def index
-    @settings = Setting.all
+    @settings = Admin::Setting.all
   end
 
    def new
-     @setting = Setting.new(params[:setting])
+     @setting = Admin::Setting.new(params[:setting])
    end
 end; end

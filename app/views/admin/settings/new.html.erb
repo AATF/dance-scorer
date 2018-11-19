@@ -1,10 +1,12 @@
 <% @title = "New Setting" %>
 <% @header = "Add New Setting" %>
 
-<%= form_for @setting, url: admin_setting_path(@setting.id), method: "patch", class: "form-control" do %>
-  <%= s.label_tag :val, "Name" %>
-  <%= s.text_field_tag :var %>
+<%= form_for @setting, class: "form-control" do |s| %>
+  <%= s.label :val, "Name" %>
+  <%= s.text_field :var, class: "form-control " %>
 
-  <%= s.label_tag :value, "Value" %>
-  <%= text_field_tag :value %>
+  <%= s.label :value, "Value" %>
+  <%= s.text_field :value, class: "form-control" %>
+
+  <%= s.button "Submit", class: "btn btn-primary" %>
 <% end %>
