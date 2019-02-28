@@ -78,25 +78,76 @@ if Rails.env.development?
 end
 
 if Rails.env.production?
-  require 'json'
 
-  file = ARGV[1]
+  file_type = ARGV[1]
+  file = ARGV[2]
 
-  json = JSON.load(File.open(file))
-  p json
+  if file_type == "json"
+    require "json"
 
-  json.each do |group,names|
-    g = Group.create(:name => group)
-    g.save
-    names.each do |dancer,dance|
-      d = Dancer.create(:name => dancer, :group_id => g.id, :dance_name => dance, :performance_order => 1)
-      d.save
-      p d
+    json = JSON.load(File.open(file))
+    p json
 
-      users.each do |_n,u|
-        s = Score.create(gen_scores(true).merge(:dancer_id => d.id, :user_id => u.id))
-        s.save
-        p s
+    json.each do |group,names|
+      g = Group.create(:name => group)
+      g.save
+      names.each do |dancer,dance|
+        d = Dancer.create(:name => dancer, :group_id => g.id, :dance_name => dance, :performance_order => 1)
+        d.save
+        p d
+
+        users.each do |_n,u|
+          s = Score.create(gen_scores(true).merge(:dancer_id => d.id, :user_id => u.id))
+          s.save
+          p s
+        end
+      end
+    end
+  elsif file_type == "csv"
+    require "csv"
+
+    hash = {}
+    previous_dance = nil
+    CSV.foreach(file, :headers => :first_row) do |row|
+      next if row.header_row?
+      next if row["dance"].nil? && row["name"].nil? && row["group"].nil?
+
+      p row
+
+      if row["dance"]
+        dance = row["dance"].strip
+        puts "dance: #{dance}"
+        previous_dance = dance
+      else
+        dance = previous_dance
+      end
+      name = row["name"].strip
+      puts "name: #{name}"
+      group = row["group"].strip
+      puts "group: #{group}"
+
+      hash[group] = {} if hash[group].nil?
+      hash[group][dance] = [] if hash[group][dance].nil?
+
+      hash[group][dance] << name
+    end
+
+    p hash
+    hash.each do |group,dance|
+      g = Group.create(:name => group)
+      g.save
+      p g
+
+      dance.each do |dance_name,names|
+        d = Dancer.create(:name => names.join(", "), :group_id => g.id, :dance_name => dance_name)
+        d.save
+        p d
+
+        users.each do |_n,u|
+          s = Score.create(gen_scores(true).merge(:dancer_id => d.id, :user_id => u.id))
+          s.save
+          p s
+        end
       end
     end
   end
