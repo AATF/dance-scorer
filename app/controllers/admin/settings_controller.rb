@@ -1,4 +1,6 @@
-class Admin; class SettingsController < ApplicationController
+module Admin; class SettingsController < ApplicationController
+  include RailsSettings::Extend
+
   def edit
     @setting = Setting.find_by_id(params[:id])
   end
