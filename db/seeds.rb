@@ -28,6 +28,7 @@ def gen_scores(prod = false)
   scores
 end
 
+# begin seed
 users = {}
 urange = (1..4)
 urange.each do |num|
@@ -154,4 +155,8 @@ if Rails.env.production?
 
   s = Setting.public_scores = false
   p s
+
 end
+
+t = Setting.app_name = "AATF"
+p t
