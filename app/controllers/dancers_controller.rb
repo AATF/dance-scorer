@@ -13,4 +13,11 @@ class DancersController < ApplicationController
   def edit
     @dancer = Dancer.find(params[:id])
   end
+
+  def update
+    params.permit!
+    @dancer = Dancer.update(params[:id], params[:dancer])
+
+    redirect_to dancer_path, notice: "Dancer has been updated."
+  end
 end
