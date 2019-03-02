@@ -21,13 +21,13 @@
       <td><%= score.dancer.name %></td>
       <td><%= score.dancer.dance_name %></td>
       <td><%= score.dancer.group.name %></td>
-      <td><%= score.theme %></td>
-      <td><%= score.presentation %></td>
-      <td><%= score.technique %></td>
-      <td><%= score.choreography %></td>
-      <td><%= score.costume %></td>
-      <td><%= score.music %></td>
-      <td><%= score.violation %></td>
+      <td><%= ScoresHelper.convert_score(score.theme) %></td>
+      <td><%= ScoresHelper.convert_score(score.presentation) %></td>
+      <td><%= ScoresHelper.convert_score(score.technique) %></td>
+      <td><%= ScoresHelper.convert_score(score.choreography) %></td>
+      <td><%= ScoresHelper.convert_score(score.costume) %></td>
+      <td><%= ScoresHelper.convert_score(score.music) %></td>
+      <td><%= ScoresHelper.convert_score(score.violation) %></td>
       <td><%= score.total %></td>
       <td><%= score.user.name %></td>
       <% if session[:logged_in] %>

@@ -13,7 +13,7 @@ module Admin; class SettingsController < ApplicationController
       params.permit!
       @setting.update(params[:setting])
       @setting.save
-      redirect_to admin_settings_path, notice: 'Setting has updated.'
+      redirect_to admin_settings_path, notice: 'Setting has been updated successfully.'
     else
       redirect_to admin_settings_path
     end

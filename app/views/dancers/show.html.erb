@@ -14,4 +14,4 @@
 
 <%= render "scores/table", scores: @dancer.scores %>
 
-<%= link_to "Edit Scores", edit_dancer_path %>
+<%= link_to "Edit Scores", edit_score_path(@dancer.scores) %>

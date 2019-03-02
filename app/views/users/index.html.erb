@@ -8,6 +8,7 @@
     <% if @current_user.admin? %>
       <th>Admin</th>
       <th>Edit User</th>
+      <th>Delete User</th>
     <% end %>
   </tr>
   <% @users.each do |user| %>
@@ -17,6 +18,7 @@
       <% if @current_user.admin? %>
         <td><%= user.admin? %></td>
         <td><%= link_to "Edit User", edit_user_path(user.id) %></td>
+        <td><%= link_to "Delete User", delete_user_path(user.id) %></td>
       <% end %>
     </tr>
   <% end %>

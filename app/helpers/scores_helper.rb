@@ -18,4 +18,12 @@ module ScoresHelper
     violation = scores_dup.delete(:violation)
     scores_dup.values.reduce(:+) - violation
   end
+
+  def self.convert_score(score)
+    if score == -1
+      "N/A"
+    else
+      score
+    end
+  end
 end
