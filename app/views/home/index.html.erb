@@ -1,7 +1,7 @@
 <% @title = "Home" %>
 <% @header = "Home Page" %>
 
-<% if Setting.public_scores %>
+<% if Setting.public_scores == "true" %>
   <%= render "groups/table" %>
 <% else %>
   Scores are not public yet.
