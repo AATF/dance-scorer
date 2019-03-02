@@ -46,7 +46,7 @@ if Rails.env.development?
   groups = {}
   grange = (1..3)
   grange.each do |num|
-    g = Group.create(:name => "group#{num}")
+    g = Group.create(:name => num)
     g.save
     p g
 

@@ -13,6 +13,9 @@ class UsersController < ApplicationController
   def update
     params.permit!
     params[:user][:id] = params[:id]
-    User.update(params[:user])
+
+    User.update(params[:id], params[:user])
+
+    redirect_to users_path, notice: "User updated successfully"
   end
 end
