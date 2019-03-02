@@ -1,13 +1,13 @@
 <% @title = "Edit Setting" %>
 <% @header = "Edit Setting" %>
 
-<%= form_for @setting, url: admin_setting_path(@setting.var) do |s| %>
+<%= form_for(@setting, url: admin_setting_path(@setting.var), method: 'patch') do |f| %>
   <div class="form-group row">
-    <%= s.label :var, "Name", class: "col-sm-2 col-form-label" %>
     <div class="col-sm-10">
-      <%= s.text_field :value, class: "form-control" %>
+      <%= f.label :var, @setting.var, class: "col-sm-2 col-form-label" %>
+      <%= f.text_area :value, rows: 10 %>
     </div>
   </div>
 
-  <%= s.button "Submit", class: "btn btn-primary" %>
+  <%= f.button "Submit", class: "btn btn-primary" %>
 <% end %>

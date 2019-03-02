@@ -1,22 +1,24 @@
 module Admin; class SettingsController < ApplicationController
-  include RailsSettings::Extend
+  before_action :get_setting, only: [:edit, :update]
 
   def edit
-    @setting = Setting.find_by_id(params[:id])
-  end
-
-  def update
-    params.permit!
-    Setting.update(params[:setting])
-
-    redirect_to admin_settings_path
   end
 
   def index
-    @settings = Setting.all
+    @settings = Setting.get_all
   end
 
-  def new
-    @setting = Setting.new(params[:setting])
+  def update
+    if @setting.value != params[:setting][:value]
+      @setting.value = params[:setting][:value]
+      @setting.save
+      redirect_to admin_settings_path, notice: 'Setting has updated.'
+    else
+      redirect_to admin_settings_path
+    end
+  end
+
+  def get_setting
+    @setting = Setting.find_by(var: params[:id]) || Setting.new(var: params[:id])
   end
 end; end

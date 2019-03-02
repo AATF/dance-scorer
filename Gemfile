@@ -17,7 +17,7 @@ group :production do
   gem "rails_12factor"
 end
 
-gem "rails-settings-cached", "~> 0.6"
+gem "rails-settings-cached", "~> 0.7"
 gem "bcrypt", "~> 3.1.7"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "rails", "~> 5.0.0"
