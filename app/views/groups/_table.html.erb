@@ -1,6 +1,6 @@
 <% @groups.each do |group| %>
   <h2><%= group.name %></h2>
-  <% if @current_user.admin? %>
+  <% if @current_user && @current_user.admin? %>
     <%= link_to "Edit group", edit_group_path(group.id) %>
   <% end %>
 

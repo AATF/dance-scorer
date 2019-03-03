@@ -1,3 +1,3 @@
-# dance-event-registration-scoring
+# dance-scorer
 
-This app will eventually be a full back office solution for west coast swing dance events.
+This app will eventually be a full solution for dance event registration and scoring.
