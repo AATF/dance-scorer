@@ -1,6 +1,11 @@
 name: Ruby
 
-on: [push]
+on:
+  push:
+    branches:
+      - '*'
+  cron:
+    - cron: '9 19 * * *'
 
 jobs:
   build:
