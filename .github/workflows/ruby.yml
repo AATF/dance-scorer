@@ -27,3 +27,4 @@ jobs:
         bundle exec rake
       env:
         RAILS_DB_USER: dev_user
+        RAILS_DB_PASS: password
