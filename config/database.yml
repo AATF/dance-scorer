@@ -8,6 +8,7 @@ default: &default
 development:
   <<: *default
   database: scorer_dev
+  host: <%= ENV.fetch("RAILS_DB_HOST") %>
 
 test:
   <<: *default
