@@ -29,7 +29,7 @@ jobs:
         RAILS_DB_USER: root
         RAILS_DB_PASS: password
 
-services:
+  services:
     mysql:
         image: mysql:5.7
         env:
