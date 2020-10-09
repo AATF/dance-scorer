@@ -27,7 +27,7 @@ jobs:
         bundle exec rake
       env:
         RAILS_ENV: development
-        RAILD_DB_HOST: localhost
+        RAILS_DB_HOST: localhost
         RAILS_DB_USER: root
         RAILS_DB_PASS: password
 
