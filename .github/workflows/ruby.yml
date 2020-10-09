@@ -26,5 +26,15 @@ jobs:
         bundle install --jobs 4 --retry 3
         bundle exec rake
       env:
-        RAILS_DB_USER: dev_user
+        RAILS_DB_USER: root
         RAILS_DB_PASS: password
+
+services:
+    mysql:
+        image: mysql:5.7
+        env:
+            MYSQL_ALLOW_EMPTY_PASSWORD: yes
+            MYSQL_DATABASE: laravel_tags
+        ports:
+            - 3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
