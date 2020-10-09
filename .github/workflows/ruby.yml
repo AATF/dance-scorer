@@ -23,9 +23,10 @@ jobs:
     - name: Build and test with Rake
       run: |
         gem install bundler
-        bundle install --jobs 4 --retry 3
+        bundle install --jobs 6 --retry 3
         bundle exec rake
       env:
+        RAILS_ENV: development
         RAILS_DB_USER: root
         RAILS_DB_PASS: password
 
