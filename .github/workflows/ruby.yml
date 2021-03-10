@@ -15,8 +15,8 @@ jobs:
         image: mysql:5.7
         env:
             MYSQL_ALLOW_EMPTY_PASSWORD: no
-            MYSQL_USER: root
-            MYSQL_PASSWORD: password
+            MYSQL_USER: user
+            MYSQL_PASSWORD: user_password
             MYSQL_DATABASE: scorer_dev
             MYSQL_ROOT_PASSWORD: password
         ports:
@@ -39,5 +39,5 @@ jobs:
       env:
         RAILS_ENV: development
         RAILS_DB_HOST: localhost
-        RAILS_DB_USER: root
-        RAILS_DB_PASS: password
+        RAILS_DB_USER: user
+        RAILS_DB_PASS: user_password
