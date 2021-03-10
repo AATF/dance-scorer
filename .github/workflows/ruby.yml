@@ -10,6 +10,16 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+            MYSQL_ALLOW_EMPTY_PASSWORD: yes
+            MYSQL_DATABASE: laravel_tags
+        ports:
+            - 3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
     steps:
     - uses: actions/checkout@v1
 
@@ -28,13 +38,3 @@ jobs:
         RAILS_DB_HOST: localhost
         RAILS_DB_USER: root
         RAILS_DB_PASS: password
-
-    services:
-      mysql:
-        image: mysql:5.7
-        env:
-            MYSQL_ALLOW_EMPTY_PASSWORD: yes
-            MYSQL_DATABASE: laravel_tags
-        ports:
-            - 3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
