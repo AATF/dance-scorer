@@ -20,7 +20,7 @@ end
 gem "rails-settings-cached", "~> 0.7"
 gem "bcrypt", "~> 3.1.7"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem "rails", "~> 5.0.0"
+gem "rails", "~> 5.2"
 gem "mysql2", "~> 0.4"
 gem "puma", "~> 3.0"
 gem "sass-rails", "~> 5.0"
