@@ -13,12 +13,13 @@ jobs:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
     - name: Set up Ruby 2.6
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.6.x
 
-    - name: Build with Rake
+    - name: Build new gemfile lock with Rake
       run: |
+        rm Gemfile.lock
         gem install bundler
         bundle install --jobs 6 --retry 3
         
