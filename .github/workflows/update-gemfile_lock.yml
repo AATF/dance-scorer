@@ -26,9 +26,14 @@ jobs:
         gem install bundler
         bundle install --jobs 6 --retry 3
         
-    - name: Commit and push files
+    - name: Commit files
       run: |
         git config --local user.email "github-actions-bot-dance-scorer@users.noreply.github.com"
         git config --local user.name "github-actions-bot"
         git commit --all --message "update gemfile lock"
-        git push
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
