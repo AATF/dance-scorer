@@ -21,7 +21,7 @@ jobs:
 
     - name: Build new gemfile lock with Rake
       run: |
-        rm Gemfile.lock
+        rm --force Gemfile.lock
         gem install bundler
         bundle install --jobs 9 --retry 3
 
