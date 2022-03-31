@@ -1,4 +1,4 @@
-name: Ruby
+name: Run ruby tests
 
 on:
   push:
