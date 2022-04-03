@@ -1,5 +1,7 @@
 source "https://rubygems.org/"
 
+ruby "~> 3.0"
+
 group :development do
   gem "listen", "~> 3.0.5"
   gem "spring"
