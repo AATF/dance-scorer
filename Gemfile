@@ -1,6 +1,6 @@
 source "https://rubygems.org/"
 
-ruby "~> 3.1"
+ruby "~> 3.1.1"
 
 group :development do
   gem "listen", "~> 3.0.5"
