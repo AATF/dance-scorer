@@ -1,4 +1,5 @@
 {
+  "stack": "heroku-20",
   "environments": {
     "test": {
       "addons":[
