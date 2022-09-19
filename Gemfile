@@ -26,7 +26,7 @@ gem "mysql2", "~> 0.4"
 gem "pg"
 gem "puma", "~> 4.3"
 gem "rails", "~> 7.0"
-gem "rails-settings-cached", "~> 0.7"
+gem "rails-settings-cached", "~> 2.7"
 gem "railties"
 gem "sass-rails", "~> 6.0"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
