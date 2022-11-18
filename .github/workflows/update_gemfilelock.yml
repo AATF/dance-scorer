@@ -5,14 +5,14 @@ on:
     branches:
       - main
   schedule:
-    - cron:  '3 7 */17 * *'
+    - cron:  '3 7 */19 * *'
   workflow_dispatch:
       
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
@@ -28,7 +28,7 @@ jobs:
         gem install bundler
         bundle install --jobs 9 --retry 3
 
-    - uses: peter-evans/create-pull-request@v3
+    - uses: peter-evans/create-pull-request@v4
       with:
         author: github-actions-bot-dance_scorer <github-actions-bot-dance_scorer@users.noreply.github.com>
         committer: github-actions-bot-dance_scorer <github-actions-bot-dance_scorer@users.noreply.github.com>
