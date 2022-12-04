@@ -1,6 +1,6 @@
 source "https://rubygems.org/"
 
-ruby "~> 3.1.1"
+ruby "~> 3.0.1"
 
 group :development do
   gem "capybara"
@@ -23,6 +23,7 @@ gem "bcrypt", "~> 3.1.7"
 gem "bootstrap", "~> 4.3"
 gem "jquery-rails"
 gem "mysql2", "~> 0.4"
+gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 gem "pg"
 gem "puma", "~> 4.3"
 gem "rails", "~> 7.0"
