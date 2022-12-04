@@ -23,6 +23,7 @@ end
 gem "bcrypt", "~> 3.1.7"
 gem "bootstrap", "~> 4.3"
 gem "jquery-rails"
+gem "mini_racer"
 gem "mysql2", "~> 0.4"
 gem "pg"
 gem "puma", "~> 4.3"
