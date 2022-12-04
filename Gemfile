@@ -6,13 +6,13 @@ group :development do
   gem "capybara"
   gem "factory_bot_rails"
   gem "launchy", require: false
-  gem "listen", "~> 3.0.5"
-  gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
+  gem "listen", "~> 3.0"
+  gem "passenger", ">= 5.3", require: "phusion_passenger/rack_handler"
   gem "pry-rails"
   gem "rspec-rails", "~> 3.5"
   gem "shoulda"
   gem "spring"
-  gem "spring-watcher-listen", "~> 2.0.0"
+  gem "spring-watcher-listen", "~> 2.0"
   gem "valid_attribute"
 end
 
@@ -20,7 +20,7 @@ group :production do
   gem "rails_12factor"
 end
 
-gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1"
 gem "bootstrap", "~> 4.3"
 gem "jquery-rails"
 gem "mini_racer"
