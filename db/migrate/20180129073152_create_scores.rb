@@ -12,5 +12,6 @@ class CreateScores < ActiveRecord::Migration[5.0]
 
     rename_column :dancers, :score, :score_id
     add_foreign_key :dancers, :scores
+    add_index :dancers, :score_id
   end
 end
