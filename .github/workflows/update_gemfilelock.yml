@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron:  '3 7 */33 * *'
+    - cron: '3 7 */33 * *'
   workflow_dispatch:
       
 jobs:
@@ -30,8 +30,8 @@ jobs:
 
     - uses: peter-evans/create-pull-request@main
       with:
-        author: github-actions-bot-dance_scorer <github-actions-bot-dance_scorer@users.noreply.github.com>
-        committer: github-actions-bot-dance_scorer <github-actions-bot-dance_scorer@users.noreply.github.com>
-        commit-message: update gemfile lock
-        title: update gemfile lock
-        delete-branch: true        
+        author: wafbot-dance_scorer <wafbot+dance_scorer@users.noreply.github.com>
+        committer: wafbot-dance_scorer <wafbot+dance_scorer@users.noreply.github.com>
+        commit-message: "[ci] update gemfile.lock"
+        title: "[ci] update gemfile.lock"
+        delete-branch: true
