@@ -28,7 +28,7 @@ jobs:
         gem install bundler
         bundle install --jobs 9 --retry 3
 
-    - uses: peter-evans/create-pull-request@v4
+    - uses: peter-evans/create-pull-request@v5
       with:
         author: github-actions-bot-dance_scorer <github-actions-bot-dance_scorer@users.noreply.github.com>
         committer: github-actions-bot-dance_scorer <github-actions-bot-dance_scorer@users.noreply.github.com>
