@@ -100,7 +100,7 @@ GEM
     ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
-    i18n (1.13.0)
+    i18n (1.14.0)
       concurrent-ruby (~> 1.0)
     jquery-rails (4.5.1)
       rails-dom-testing (>= 1, < 3)
