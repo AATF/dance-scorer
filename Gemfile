@@ -21,7 +21,7 @@ group :production do
 end
 
 gem "bcrypt", "~> 3.1"
-gem "bootstrap", "~> 5.1"
+gem "bootstrap", "~> 5.3"
 gem "jquery-rails"
 gem "mini_racer"
 gem "pg"
