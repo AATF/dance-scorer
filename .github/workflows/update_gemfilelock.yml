@@ -18,7 +18,7 @@ jobs:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
           
     - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
+      uses: ruby/setup-ruby@master
       with:
         ruby-version: debug
 
@@ -30,8 +30,8 @@ jobs:
 
     - uses: peter-evans/create-pull-request@main
       with:
-        author: wafbot-dance_scorer <wafbot+dance_scorer@users.noreply.github.com>
-        committer: wafbot-dance_scorer <wafbot+dance_scorer@users.noreply.github.com>
+        author: wafbot <wafbot+dance_scorer@fawong.com>
+        committer: wafbot <wafbot+dance_scorer@fawong.com>
         commit-message: "[ci] update gemfile.lock"
         title: "[ci] update gemfile.lock"
         delete-branch: true
