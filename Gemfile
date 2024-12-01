@@ -9,7 +9,7 @@ group :development do
   gem "listen", "~> 3.0"
   gem "passenger", ">= 5.3", require: "phusion_passenger/rack_handler"
   gem "pry-rails"
-  gem "rspec-rails", "~> 7.0"
+  gem "rspec-rails", "~> 7.1"
   gem "shoulda"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0"
