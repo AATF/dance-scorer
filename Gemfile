@@ -8,7 +8,7 @@ group :development do
   gem "launchy", require: false
   gem "listen", "~> 3.0"
   gem "passenger", ">= 5.3", require: "phusion_passenger/rack_handler"
-  gem "pry-rails", ">= 1.3"
+  gem "pry-rails", ">= 0.3"
   gem "rspec-rails", "~> 7.0"
   gem "shoulda", ">= 1.3"
   gem "spring", ">= 1.3"
