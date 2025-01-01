@@ -30,5 +30,5 @@ gem "rails", "~> 8.0"
 gem "rails-settings-cached", "~> 2.7"
 gem "railties", ">= 1.3"
 gem "sass-rails", "~> 6.0"
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby], ">= 1.3"
+gem "tzinfo-data", ">= 1.3", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "uglifier", "~> 4.2"
