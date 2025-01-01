@@ -27,7 +27,7 @@ gem "mini_racer"
 gem "pg"
 gem "puma", "~> 6.4"
 gem "rails", "~> 8.0"
-gem "rails-settings-cached", "~> 2.7"
+gem "rails-settings-cached", "~> 2.9"
 gem "railties"
 gem "sass-rails", "~> 6.0"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
