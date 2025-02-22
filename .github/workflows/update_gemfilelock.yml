@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '.github/**'
   schedule:
     - cron: '3 7 */33 * *'
   workflow_dispatch:
@@ -32,8 +34,8 @@ jobs:
 
     - uses: peter-evans/create-pull-request@main
       with:
-        author: wafbot <wafbot+dance_scorer@fawong.com>
-        committer: wafbot <wafbot+dance_scorer@fawong.com>
+        author: wafbot <wafbot@aatf.us>
+        committer: wafbot <wafbot@aatf.us>
         commit-message: "[ci] update gemfile.lock"
         title: "[ci] update gemfile.lock"
         delete-branch: true
