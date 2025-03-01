@@ -285,7 +285,7 @@ GEM
       concurrent-ruby (~> 1.0)
     uglifier (4.2.1)
       execjs (>= 0.3.0, < 3)
-    uri (1.0.2)
+    uri (1.0.3)
     useragent (0.16.11)
     valid_attribute (2.0.0)
     websocket-driver (0.7.7)
