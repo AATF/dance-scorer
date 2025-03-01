@@ -33,9 +33,14 @@ jobs:
         bundle install --jobs 9 --retry 3
 
     - uses: peter-evans/create-pull-request@main
+      id: pr
       with:
         author: wafbot <wafbot@aatf.us>
         committer: wafbot <wafbot@aatf.us>
         commit-message: "[ci] update gemfile.lock"
         title: "[ci] update gemfile.lock"
         delete-branch: true
+
+    - uses: peter-evans/enable-pull-request-automerge@v3
+      with:
+        pull-request-number: ${{ steps.pr.outputs.pull-request-number }}
