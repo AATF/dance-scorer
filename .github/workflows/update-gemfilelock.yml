@@ -1,6 +1,7 @@
 name: update gemfile.lock file
 
-permissions: write-all
+permissions: 
+  pull-requests: write
 
 on:
   push:
