@@ -45,4 +45,4 @@ jobs:
     - name: enable auto merge
       if: steps.pr.outputs.pull-request-number
       run: |
-        gh pr edit ${{ steps.pr.outputs.pull-request-number }} --auto
+        gh pr merge ${{ steps.pr.outputs.pull-request-number }} --auto
