@@ -42,8 +42,7 @@ jobs:
         title: "[ci] update gemfile.lock"
         delete-branch: true
 
-    - uses: peter-evans/enable-pull-request-automerge@v3
+    - name: enable auto merge
       if: steps.pr.outputs.pull-request-number
-      with:
-        pull-request-number: ${{ steps.pr.outputs.pull-request-number }}
-        merge-method: squash
+      run: |
+        gh pr edit ${{ steps.pr.outputs.pull-request-number }} --auto
