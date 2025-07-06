@@ -10,6 +10,7 @@ on:
       - main
     paths-ignore:
       - '.github/**'
+      - '**.md'
   schedule:
     - cron: '3 7 */33 * *'
   workflow_dispatch:
