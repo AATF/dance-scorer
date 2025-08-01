@@ -164,7 +164,8 @@ GEM
       rack (>= 1.6.13)
       rackup (>= 1.0.1)
       rake (>= 12.3.3)
-    pg (1.5.9)
+    pg (1.6.0)
+    pg (1.6.0-x86_64-linux)
     popper_js (2.11.8)
     pp (0.6.2)
       prettyprint
