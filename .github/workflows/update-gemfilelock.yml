@@ -37,8 +37,8 @@ jobs:
     - uses: peter-evans/create-pull-request@main
       id: pr
       with:
-        author: wafbot <wafbot@aatf.us>
-        committer: wafbot <wafbot@aatf.us>
+        author: aatfbot <aatfbot@aatf.us>
+        committer: aatfbot <aatfbot@aatf.us>
         commit-message: "[ci] update gemfile.lock"
         title: "[ci] update gemfile.lock"
         delete-branch: true
