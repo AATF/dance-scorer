@@ -28,13 +28,13 @@ ENV RAILS_ENV="production" \
 # Throw-away build stage to reduce size of final image
 FROM base AS build
 
-COPY ./src/Gemfile ./src/Gemfile.lock ./
+COPY ./src ./
+COPY ./bin ./
+
 RUN bundle config set --local with development && \
     bundle install --with development && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
-
-COPY ./src ./
 
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
