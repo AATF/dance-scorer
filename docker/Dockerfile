@@ -29,7 +29,7 @@ ENV RAILS_ENV="production" \
 FROM base AS build
 
 COPY ./src ./
-COPY ./bin ./
+COPY ./bin /
 
 RUN bundle config set --local with development && \
     bundle install --with development && \
@@ -40,7 +40,7 @@ RUN bundle config set --local with development && \
 RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+RUN SECRET_KEY_BASE_DUMMY=1 /bin/rails assets:precompile
 
 # Final stage for app image
 FROM base
