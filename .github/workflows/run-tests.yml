@@ -37,6 +37,7 @@ jobs:
 
     - name: Build and test with Rake
       run: |
+        cd src
         gem install bundler
         bundle install --jobs 6 --retry 3
         bundle exec rake

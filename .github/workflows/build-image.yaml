@@ -1,0 +1,33 @@
+name: build image
+
+permissions: 
+  contents: read
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/**'
+      - '**.md'
+  workflow_dispatch:
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@main
+        with:
+          fetch-depth: 2
+            
+      - name: Log in to Docker Hub
+        uses: docker/login-action@master
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: build
+        run: |
+          make build
+          make upload
