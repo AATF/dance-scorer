@@ -8,7 +8,15 @@ FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 WORKDIR /rails
 
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 libvips libpq-dev && \
+    apt-get install --no-install-recommends -y \
+      curl \
+      libjemalloc2 \
+      git \
+      pkg-config \
+      libvips \
+      build-essential \
+      libyaml-dev \
+      libpq-dev && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set production environment
@@ -20,18 +28,8 @@ ENV RAILS_ENV="production" \
 # Throw-away build stage to reduce size of final image
 FROM base AS build
 
-# Install packages needed to build gems
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y \
-      build-essential \
-      curl \
-      git \
-      pkg-config \
-      libyaml-dev && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
-
 COPY ./src/Gemfile ./src/Gemfile.lock ./
-RUN bundle install && \
+RUN bundle config set --local with development && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
 
