@@ -30,7 +30,7 @@ RUN apt-get update -qq && \
       libyaml-dev && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
-COPY Gemfile Gemfile.lock ./
+COPY ./src/Gemfile ./src/Gemfile.lock ./
 RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
