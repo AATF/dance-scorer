@@ -30,6 +30,7 @@ FROM base AS build
 
 COPY ./src/Gemfile ./src/Gemfile.lock ./
 RUN bundle config set --local with development && \
+    bundle install --with development && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
 
