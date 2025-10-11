@@ -101,7 +101,7 @@ GEM
     date (3.4.1)
     diff-lcs (1.6.2)
     drb (2.2.3)
-    erb (5.0.3)
+    erb (5.1.0)
     erubi (1.13.1)
     execjs (2.10.0)
     factory_bot (6.5.5)
@@ -367,7 +367,7 @@ CHECKSUMS
   date (3.4.1) sha256=bf268e14ef7158009bfeaec40b5fa3c7271906e88b196d958a89d4b408abe64f
   diff-lcs (1.6.2) sha256=9ae0d2cba7d4df3075fe8cd8602a8604993efc0dfa934cff568969efb1909962
   drb (2.2.3) sha256=0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373
-  erb (5.0.3) sha256=a3b6eb7a1b1dfaa7567a503bb70bd5d4c2279644b4bad660cd9201fa05e43775
+  erb (5.1.0) sha256=51cb21c742e834ffb615988305b51d2bdf6bf6e710c4894ac29e38b13aa38708
   erubi (1.13.1) sha256=a082103b0885dbc5ecf1172fede897f9ebdb745a4b97a5e8dc63953db1ee4ad9
   execjs (2.10.0) sha256=6bcb8be8f0052ff9d370b65d1c080f2406656e150452a0abdb185a133048450d
   factory_bot (6.5.5) sha256=ce59295daee1b4704dab8a2fee6816f513d467c6aa3bc587860767d74a66efbe
