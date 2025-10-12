@@ -42,6 +42,7 @@ RUN bundle exec bootsnap precompile app/ lib/
 RUN SECRET_KEY_BASE_DUMMY=1 \
   RAILS_DB_USER=none \
   RAILS_DB_PASS=none \
+  RAILS_DB_HOST_DUMMY=none \
   ./bin/rails assets:precompile
 
 # Final stage for app image
