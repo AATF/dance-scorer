@@ -30,8 +30,8 @@ FROM base AS build
 
 COPY ./src ./
 
-RUN bundle config set --local with development && \
-    bundle install --with development --with production && \
+RUN bundle config set --local with development,production && \
+    bundle install --with development,production && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
 
