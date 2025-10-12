@@ -40,7 +40,7 @@ RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
 RUN SECRET_KEY_BASE_DUMMY=1 \
-  RAIL_DB_USER=none \
+  RAILS_DB_USER=none \
   ./bin/rails assets:precompile
 
 # Final stage for app image
