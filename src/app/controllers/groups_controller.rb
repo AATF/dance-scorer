@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
   end
 
   def update
-    params.permit!
+    params.permit(params[:id], params[:group])
 
     Group.update(params[:id], params[:group])
 

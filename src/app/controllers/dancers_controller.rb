@@ -15,7 +15,7 @@ class DancersController < ApplicationController
   end
 
   def update
-    params.permit!
+    params.permit(params[:id], params[:dancer])
     @dancer = Dancer.update(params[:id], params[:dancer])
 
     redirect_to dancer_path, notice: "Dancer has been updated."
