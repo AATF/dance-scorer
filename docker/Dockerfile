@@ -31,7 +31,7 @@ FROM base AS build
 COPY ./src ./
 
 RUN bundle config set with 'development,production' && \
-    bundle install && \
+    bundle install --with 'development,production' && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
 
