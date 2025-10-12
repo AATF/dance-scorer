@@ -31,7 +31,7 @@ FROM base AS build
 COPY ./src ./
 
 RUN bundle config set --local with development && \
-    bundle install --with development && \
+    bundle install --with development --with production && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
 
@@ -39,10 +39,10 @@ RUN bundle config set --local with development && \
 RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN RAILS_DB_USER=none \
-  RAILS_DB_PASS=none \
-  RAILS_DB_HOST=none \
-  ./bin/rails assets:precompile
+#RUN RAILS_DB_USER=none \
+#  RAILS_DB_PASS=none \
+#  RAILS_DB_HOST=none \
+#  ./bin/rails assets:precompile
 
 # Final stage for app image
 FROM base
@@ -57,9 +57,7 @@ RUN groupadd --system --gid 1000 rails && \
     chown -R rails:rails db log storage tmp
 USER 1000:1000
 
-# Entrypoint prepares the database.
-ENTRYPOINT ["/rails/bin/docker-entrypoint"]
-
 # Start server via Thruster by default, this can be overwritten at runtime
-EXPOSE 80
+EXPOSE 3000
+
 CMD ["./bin/thrust", "./bin/rails", "server"]
