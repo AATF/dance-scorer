@@ -59,4 +59,4 @@ USER 1000:1000
 
 EXPOSE 3000
 
-ENTRYPOINT ["thrust", "./bin/rails", "server"]
+ENTRYPOINT ["./bin/rails", "server"]
