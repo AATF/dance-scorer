@@ -14,6 +14,9 @@ upload:
 	$(DOCKER) tag $(TAG) $(REGISTRY_URL)/$(TAG)
 	$(DOCKER) push $(REGISTRY_URL)/$(TAG)
 
+	$(DOCKER) tag $(TAG) $(REGISTRY_URL)/latest
+	$(DOCKER) push $(REGISTRY_URL)/latest
+
 run: build
 	$(DOCKER) run -p 60000:8080 -it --entrypoint /bin/bash $(TAG)
 
