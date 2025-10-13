@@ -1,6 +1,9 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created along side the database with db:setup).
 
+Setting.create(:var => "app_name", :value => "AATF")
+Setting.create(:var => "public_scores", :value => false)
+
 def gen_scores(prod = false)
   score_percentages = {
       :theme => 20,
@@ -152,11 +155,4 @@ if Rails.env.production?
       end
     end
   end
-
-  s = Setting.public_scores = false
-  p s
-
 end
-
-t = Setting.app_name = "AATF"
-p t
