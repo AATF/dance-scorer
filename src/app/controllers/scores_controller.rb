@@ -2,6 +2,7 @@ class ScoresController < ApplicationController
   before_action :require_login
 
   def new
+    @dancer = Dancer.find(params[:id])
   end
 
   def index

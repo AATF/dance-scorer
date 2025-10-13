@@ -11,5 +11,5 @@ RailsLiveReload.configure do |config|
   # Ignored folders & files
   # config.ignore %r{node_modules/}
 
-  config.enabled = Rails.env.development? || Rails.env.test?
+  config.enabled = Rails.env.development?
 end if defined?(RailsLiveReload)

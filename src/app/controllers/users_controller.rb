@@ -15,10 +15,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    params.permit(:id, :user)
-    params[:user][:id] = params[:id]
+    params.permit(:name, :username)
 
-    User.update(params[:id], params[:user])
+    user = params[:user]
+    user[:id] = params[:id]
+    User.update(params[:id], :name => user[:name], :username => user[:username])
 
     redirect_to users_path, notice: "User updated successfully"
   end

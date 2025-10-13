@@ -4,6 +4,8 @@
 <h2>Dance Name: <%= @dancer.dance_name %></h2>
 <hr />
 
+<button><%= link_to "New Dance Score", new_score_path %></button>
+
 <% @dancer.scores.each do |score| %>
   <h3>Judge Name: <%= User.find(score.user_id).name %></h3>
   <h3>Total Score: <%= score.total %></h3>
