@@ -1,6 +1,6 @@
 class RemoveUnneededStuff < ActiveRecord::Migration[5.0]
   def change
-    drop_table :contests
+    drop_table :contests, :if_exists => true
 
     rename_table :judges, :users
 
