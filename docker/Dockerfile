@@ -16,8 +16,8 @@ RUN apt-get update -qq && \
       libvips \
       build-essential \
       libyaml-dev \
-      libpq-dev && \
-      libmariadbd-dev && \
+      libpq-dev \
+      libmariadb-dev && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set production environment
