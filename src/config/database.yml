@@ -1,14 +1,14 @@
 default: &default
   adapter: postgresql
   encoding: utf8
+  database: dance_scorer
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV.fetch("RAILS_DB_USER") %>
   password: <%= ENV.fetch("RAILS_DB_PASS") %>
-  database: scorer
+  host: <%= ENV.fetch("RAILS_DB_HOST") %>
 
 development:
   <<: *default
-  host: <%= ENV.fetch("RAILS_DB_HOST") %>
 
 test:
   <<: *default
