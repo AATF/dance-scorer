@@ -10,9 +10,9 @@ class GroupsController < ApplicationController
   end
 
   def update
-    params.permit(:id, :group)
+    params.permit(:name)
 
-    Group.update(params[:id], params[:group])
+    Group.update(params[:id], :name => params[:group][:name])
 
     redirect_to groups_path, notice: "Group #{params[:group][:name]} updated successfully"
   end
@@ -22,8 +22,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-    #params.permit(:id, :name)
-    params.permit!
+    params.permit(:name)
 
     @group = Group.new(:name => params[:group][:name])
     @group.save

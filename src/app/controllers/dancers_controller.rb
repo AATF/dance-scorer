@@ -12,6 +12,7 @@ class DancersController < ApplicationController
 
   def edit
     @dancer = Dancer.find(params[:id])
+    @groups = Group.all
   end
 
   def update
@@ -24,16 +25,16 @@ class DancersController < ApplicationController
 
   def new
     @dancer = Dancer.new
+    @groups = Group.all
   end
 
   def create
+    #params.permit(:name, :dance_name, :performance_order)
     params.permit!
-#    params.require(:dancer)
 
     dancer = params[:dancer]
 
-    @dancer = Dancer.new(:name => dancer[:name], :dance_name => dancer[:dance_name], :performance_order => dancer[:performance_order])
-    @dancer = Dancer.new(:name => dancer[:name])
+    @dancer = Dancer.new(:name => dancer[:name], :dance_name => dancer[:dance_name], :performance_order => dancer[:performance_order], :group_id => dancer[:group_id])
     @dancer.save
 
     redirect_to dancers_path, notice: "Dancer #{dancer[:name]} has been created"

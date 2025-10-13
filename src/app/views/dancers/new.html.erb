@@ -17,5 +17,10 @@
     <%= f.text_field :performance_order, class: "form-control" %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :group, "Group" %>
+    <%= f.collection_select :group_id, @groups, :id, :name, prompt: "Select a group" %>
+  </div>
+
   <%= f.button "Submit", class: "btn btn-primary" %>
 <% end %>

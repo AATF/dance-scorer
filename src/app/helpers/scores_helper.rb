@@ -5,16 +5,18 @@ module ScoresHelper
       scores[dancer.name] = average(dancer.scores.map { |s| s.total })
     end
     if scores.length > 0
-      name = scores.sort_by { |k,v| v }.reverse.first[0]
+      scores.sort_by { |k,v| v }.reverse.first[0]
     else
-      name = "None currently"
+      "None currently"
     end
-
-    name
   end
 
   def self.average(totals)
-    totals.inject { |sum, el| sum + el } / totals.length
+    if totals.length > 0
+      totals.inject { |sum, el| sum + el } / totals.length
+    else
+      -1
+    end
   end
 
   def self.total_score(scores)
