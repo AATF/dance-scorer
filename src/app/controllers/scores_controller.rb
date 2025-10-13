@@ -33,7 +33,7 @@ class ScoresController < ApplicationController
     params.permit(:total)
 
     if params[:score][:total]
-      scores = scores = params[:score].transform_values { |v| -1 }
+      scores = params[:score].transform_values { |v| ScoresHelper::NIL_SCORE }
       total = params[:score][:total]
     else
       scores = params[:score].transform_values { |v| v.to_f }

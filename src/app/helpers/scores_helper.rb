@@ -15,9 +15,9 @@ module ScoresHelper
 
   def self.average(totals)
     if totals.length > 0
-      totals.inject { |sum, el| sum + el } / totals.length
+      '%.2f' % totals.inject { |sum, el| sum + el } / totals.length
     else
-      NIL_SCORE
+      "N/A"
     end
   end
 

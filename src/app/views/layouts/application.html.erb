@@ -25,10 +25,10 @@
 
         <ul class="navbar-nav navbar-right">
           <% if session[:logged_in] && @current_user %>
-            <li class="nav-item"><%= link_to @current_user.name, user_path(session[:user_id]) %></li>
-            <li class="nav-item"><%= link_to "Logout", logout_path %></li>
+            <li class="nav-item"><%= link_to @current_user.name, user_path(session[:user_id]), class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to "Logout", logout_path, class: "nav-link" %></li>
           <% else %>
-            <li class="nav-item"><%= link_to "Login", login_path %></li>
+            <li class="nav-item"><%= link_to "Login", login_path, class: "nav-link" %></li>
           <% end %>
         </ul>
       </div>

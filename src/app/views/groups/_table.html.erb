@@ -14,7 +14,7 @@
       <tr>
         <td><%= d.name %></td>
         <td><%= d.dance_name %></td>
-        <td><%= '%.2f' % ScoresHelper.average(d.scores.map { |s| s.total }) %></td>
+        <td><%= ScoresHelper.average(d.scores.map { |s| s.total }) %></td>
       </tr>
     <% end %>
   </table>
