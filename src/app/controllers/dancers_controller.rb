@@ -16,9 +16,10 @@ class DancersController < ApplicationController
   end
 
   def update
-    params.permit(:id, :dancer)
+    params.permit(:name, :performance_order, :group_id, :dance_name)
 
-    @dancer = Dancer.update(params[:id], params[:dancer])
+    dancer = params[:dancer]
+    @dancer = Dancer.update(params[:id], :name => dancer[:name], :performance_order => dancer[:performance_order], :group_id => dancer[:group_id], :dance_name => dancer[:dance_name])
 
     redirect_to dancer_path, notice: "Dancer has been updated."
   end
@@ -29,8 +30,7 @@ class DancersController < ApplicationController
   end
 
   def create
-    #params.permit(:name, :dance_name, :performance_order)
-    params.permit!
+    params.permit(:name, :dance_name, :performance_order)
 
     dancer = params[:dancer]
 

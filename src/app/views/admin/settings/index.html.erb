@@ -7,11 +7,11 @@
     <th scope="col">Value</th>
     <th scope="col">Options</th>
   </tr>
-  <% @settings.each do |key,value| %>
+  <% @settings.each do |key| %>
   <tr>
     <td><%= key %></td>
-    <td><%= value %></td>
-    <td><%= link_to 'edit', edit_admin_setting_path(key) %></td>
+    <td><%= Setting.find_by(var: key).value %></td>
+    <td><%= link_to 'Edit', edit_admin_setting_path(key) %></td>
   </tr>
   <% end %>
 </table>

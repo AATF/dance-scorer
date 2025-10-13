@@ -9,10 +9,12 @@ module Admin; class SettingsController < ApplicationController
   end
 
   def update
-    if @setting.value != params[:setting][:value] || @setting.var != params[:setting][:var]
-      params.permit(:setting)
+    setting = params[:setting]
 
-      @setting.update(params[:setting])
+    if @setting.value != setting[:value] || @setting.var != setting[:var]
+      params.permit(:var, :value)
+
+      @setting.update(:var => setting[:var], :value => setting[:value])
       @setting.save
       redirect_to admin_settings_path, notice: 'Setting has been updated successfully.'
     else

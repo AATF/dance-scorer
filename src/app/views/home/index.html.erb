@@ -1,8 +1,8 @@
 <% @title = "Home" %>
 <% @header = "Home Page" %>
 
-<% if Setting.public_scores == "true" %>
+<% if ActiveModel::Type::Boolean.new.cast(Setting.public_scores) %>
   <%= render "groups/table" %>
 <% else %>
-  Scores are not public yet.
+  Scores are not public yet
 <% end %>
