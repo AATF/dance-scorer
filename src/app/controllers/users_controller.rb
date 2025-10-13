@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    params.permit(params[:id], params[:user])
+    params.permit(:id, :user)
     params[:user][:id] = params[:id]
 
     User.update(params[:id], params[:user])

@@ -5,12 +5,13 @@ module Admin; class SettingsController < ApplicationController
   end
 
   def index
-    @settings = Setting.get_all
+    @settings = Setting.keys
   end
 
   def update
     if @setting.value != params[:setting][:value] || @setting.var != params[:setting][:var]
       params.permit(:setting)
+
       @setting.update(params[:setting])
       @setting.save
       redirect_to admin_settings_path, notice: 'Setting has been updated successfully.'

@@ -1,0 +1,9 @@
+<% @title = "New Group" %>
+<% @header = "New Group" %>
+
+<%= form_for @group, class: "form-control" do |f| %>
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.button "Submit", class: "btn btn-primary" %>
+<% end %>

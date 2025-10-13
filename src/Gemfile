@@ -30,3 +30,4 @@ gem "tzinfo-data", "~> 2.0", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "uglifier", "~> 4.2"
 gem "thruster", "~> 0.1"
 gem "mysql2", "~> 0.5"
+gem "rails_live_reload", "~> 0.5"

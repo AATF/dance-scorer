@@ -4,7 +4,11 @@ module ScoresHelper
     group.dancers.each do |dancer|
       scores[dancer.name] = average(dancer.scores.map { |s| s.total })
     end
-    name = scores.sort_by { |k,v| v }.reverse.first[0]
+    if scores.length > 0
+      name = scores.sort_by { |k,v| v }.reverse.first[0]
+    else
+      name = "None currently"
+    end
 
     name
   end

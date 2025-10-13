@@ -35,16 +35,22 @@ end
 users = {}
 urange = (1..4)
 urange.each do |num|
-  u = User.create(:username => "judge#{num}", :name => "judge #{num}", :password => "judge#{num}", :admin => false)
-  u.save
-  p u
+  username = "judge#{num}"
+  if !User.exists?(:username => username)
+    u = User.create(:username => username, :name => "judge #{num}", :password => "judge#{num}", :admin => false)
+    u.save
+    p u
 
-  users[num] = u
+    users[num] = u
+  end
 end
 
-a = User.create(:username => "admin", :name => "admin user", :password => "admin", :admin => true)
-a.save
-p a
+admin_username = "admin"
+if !User.exists?(:username => admin_username)
+  a = User.create(:username => admin_username, :name => "admin user", :password => "admin", :admin => true)
+  a.save
+  p a
+end
 
 if Rails.env.development?
   groups = {}
@@ -82,7 +88,6 @@ if Rails.env.development?
 end
 
 if Rails.env.production?
-
   file_type = ARGV[1]
   file = ARGV[2]
 

@@ -27,7 +27,7 @@ class ScoresController < ApplicationController
   end
 
   def update
-    params.permit(params[:score][:total])
+    params.permit(:total)
 
     if params[:score][:total]
       scores = scores = params[:score].transform_values { |v| -1 }
