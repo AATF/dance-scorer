@@ -18,6 +18,7 @@
   </tr>
   <% scores.each do |score| %>
     <tr>
+      <% if score %>
       <td><%= score.dancer.name %></td>
       <td><%= score.dancer.dance_name %></td>
       <td><%= score.dancer.group.name %></td>
@@ -32,6 +33,7 @@
       <td><%= score.user.name %></td>
       <% if session[:logged_in] %>
         <td><%= link_to "Edit Score", edit_score_path(score.dancer_id, user_id: score.user.id) %></td>
+      <% end %>
       <% end %>
     </tr>
   <% end %>

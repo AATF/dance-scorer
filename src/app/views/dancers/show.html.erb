@@ -19,7 +19,7 @@
 <% end %>
 
 <% if @current_user.admin? %>
-  <%= link_to "Edit Scores", edit_admin_score_path(@dancer.id) %>
+  <%= link_to "Admin Edit Scores", edit_admin_score_path(@dancer.id) %>
 <% else %>
-  <%= link_to "Edit Scores", edit_score_path %>
+  <%= link_to "Edit Scores", edit_score_path(:id => @dancer.id) %>
 <% end %>

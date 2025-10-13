@@ -1,6 +1,10 @@
 <% @title = "Users" %>
 <% @header = "Users" %>
 
+<% if @current_user.admin? %>
+<button><%= link_to "New User", new_user_path %></button>
+<% end %>
+
 <table class="table">
   <tr>
     <th>Username</th>

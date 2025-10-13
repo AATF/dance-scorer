@@ -1,7 +1,9 @@
 <% @title = "Dancer Index" %>
 <% @header = "Dancers" %>
 
+<% if @current_user.admin? %>
 <button><%= link_to "New Dancer", new_dancer_path %></button>
+<% end %>
 
 <table class="table">
   <tr>

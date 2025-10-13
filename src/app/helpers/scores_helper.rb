@@ -1,4 +1,6 @@
 module ScoresHelper
+  NIL_SCORE = -10000000000
+
   def self.top_scorer(group)
     scores = {}
     group.dancers.each do |dancer|
@@ -15,7 +17,7 @@ module ScoresHelper
     if totals.length > 0
       totals.inject { |sum, el| sum + el } / totals.length
     else
-      -1
+      NIL_SCORE
     end
   end
 
@@ -26,7 +28,7 @@ module ScoresHelper
   end
 
   def self.convert_score(score)
-    if score == -1
+    if score == NIL_SCORE
       "N/A"
     else
       score

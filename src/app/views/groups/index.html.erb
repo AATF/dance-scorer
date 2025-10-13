@@ -1,6 +1,8 @@
 <% @title = "Groups" %>
 <% @header = "Groups" %>
 
+<% if @current_user.admin? %>
 <button><%= link_to "New Group", new_group_path %></button>
+<% end %>
 
 <%= render "groups/table" %>
