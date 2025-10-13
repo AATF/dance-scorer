@@ -17,6 +17,7 @@ RUN apt-get update -qq && \
       build-essential \
       libyaml-dev \
       libpq-dev && \
+      libmariadb-dev && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set production environment
