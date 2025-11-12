@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  PROJECT_ID: 'my-projeeprovider' # TODO: update to your workload identity provider
+  REGION: us-west-2
 
 jobs:
   deploy:
@@ -25,11 +25,11 @@ jobs:
       - name: Authenticate to aws
         uses: aws-actions/configure-aws-credentials@v3
         with:
-          aws-region: us-west-2
+          aws-region: '{{ env.REGION }}'
           role-to-assume: arn:aws:iam::152778659453:role/github-actions
 
       # Deploy the Docker image to the GKE cluster
       - name: Deploy
         run: |-
-          # replacing the image name in the k8s template
+          aws eks update-kubeconfig --name interesting-blues-orca --region {{ env.REGION }}
           ./kustomizeploymentawefeDEees -o wide
