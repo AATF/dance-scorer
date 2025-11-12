@@ -25,11 +25,11 @@ jobs:
       - name: Authenticate to aws
         uses: aws-actions/configure-aws-credentials@v3
         with:
-          aws-region: '{{ env.REGION }}'
+          aws-region: '${{ env.REGION }}'
           role-to-assume: arn:aws:iam::152778659453:role/github-actions
 
       # Deploy the Docker image to the GKE cluster
       - name: Deploy
         run: |-
-          aws eks update-kubeconfig --name interesting-blues-orca --region {{ env.REGION }}
+          aws eks update-kubeconfig --name interesting-blues-orca --region ${{ env.REGION }}
           ./kustomizeploymentawefeDEees -o wide
