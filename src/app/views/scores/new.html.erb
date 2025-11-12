@@ -1,11 +1,11 @@
 <% @title = "New Dancer Score" %>
-<% @header = "New Dancer Score of #{@dancer.name} for #{@score.user.name}" %>
+<% @header = "New Dancer Score of #{@dancer.name}" %>
 
 <h2>Dance Name: <%= @dancer.dance_name %></h2>
 
-<h3>Total Score: <%= @score.total %></h3>
-
 <%= form_for @score, html: { class: "form-control" } do |f| %>
+  <%= hidden_field_tag :dancer_id, @dancer.id %>
+
   <div class="form-group">
     <%= f.label :theme, "Theme" %>
     <%= f.text_field :theme, class: "form-control", autofocus: true %>
@@ -39,11 +39,6 @@
   <div class="form-group">
     <%= f.label :violation, "Violation" %>
     <%= f.text_field :violation, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :total, "Total" %>
-    <%= f.text_field :total, class: "form-control" %>
   </div>
 
   <%= f.button "Submit", class: "btn btn-primary" %>

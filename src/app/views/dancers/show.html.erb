@@ -21,5 +21,5 @@
 <% if @current_user.admin? %>
   <%= link_to "Admin Edit Scores", edit_admin_score_path(@dancer.id) %>
 <% else %>
-  <%= link_to "Edit Scores", edit_score_path(:id => @dancer.id) %>
+  <%= link_to "Edit Scores", edit_score_path(:dancer_id => @dancer.id) %>
 <% end %>

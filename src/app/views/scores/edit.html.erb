@@ -6,6 +6,8 @@
 <h3>Total Score: <%= @score.total %></h3>
 
 <%= form_for @score, html: { class: "form-control" } do |f| %>
+  <%= hidden_field_tag :dancer_id, @dancer.id %>
+
   <div class="form-group">
     <%= f.label :theme, "Theme" %>
     <%= f.text_field :theme, class: "form-control", autofocus: true %>

@@ -14,8 +14,12 @@ module ScoresHelper
   end
 
   def self.average(totals)
+      p "-="*22
+      p totals.inject { |sum, el| sum + el }
+      p totals.length
+      p "-="*22
     if totals.length > 0
-      '%.2f' % totals.inject { |sum, el| sum + el } / totals.length
+      '%.2f' % (totals.inject { |sum, el| sum + el }).to_f / totals.length.to_f
     else
       "N/A"
     end

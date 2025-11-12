@@ -31,6 +31,7 @@ Rails.application.configure do
 
   config.assets.quiet = true
 
+  config.log_level = :debug
 
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end
