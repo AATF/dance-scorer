@@ -35,7 +35,7 @@ jobs:
         gem install bundler
         bundle install --jobs 9 --retry 3
 
-    - uses: peter-evans/create-pull-request@main
+    - uses: peter-evans/create-pull-request@v7.0.8
       id: pr
       with:
         author: aatfbot <aatfbot@aatf.us>
