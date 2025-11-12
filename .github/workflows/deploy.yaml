@@ -25,6 +25,7 @@ jobs:
       - name: Authenticate to aws
         uses: aws-actions/configure-aws-credentials@v3
         with:
+          aws-region: us-west-2
           role-to-assume: arn:aws:iam::152778659453:role/github-actions
 
       # Deploy the Docker image to the GKE cluster
