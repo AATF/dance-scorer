@@ -1,6 +1,7 @@
 name: Deploy to eks
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -23,7 +24,7 @@ jobs:
         uses: 'actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332' # actions/checkout@v4
 
       - name: Authenticate to aws
-        uses: aws-actions/configure-aws-credentials@v3
+        uses: aws-actions/configure-aws-credentials@v5
         with:
           aws-region: '${{ env.REGION }}'
           role-to-assume: arn:aws:iam::152778659453:role/github-actions
