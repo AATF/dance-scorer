@@ -32,6 +32,9 @@ Rails.application.configure do
   config.assets.quiet = true
 
   config.log_level = :debug
+  config.active_job.verbose_enqueue_logs = true
+  config.action_dispatch.verbose_redirect_logs = true
+  config.active_record.query_log_tags_enabled = true
 
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end

@@ -5,6 +5,6 @@
 <h2>Dance Name: <%= @dancer.dance_name %></h2>
 <hr />
 
-<button><%= link_to "New Dance Score", new_score_path %></button>
+<button><%= link_to "New Dance Score", new_score_path(dancer_id: @dancer.id) %></button>
 
 <%= render "scores/table", scores: @dancer.scores %>

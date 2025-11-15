@@ -1,8 +1,8 @@
 class GroupsController < ApplicationController
-#  before_action :require_login
-#  before_action :require_admin, only: [:edit, :new]
+  before_action :require_login
+  before_action :require_admin, only: [:edit, :new]
 #  before_action :user_signed_in?
-  before_action :authenticate_user!
+#  before_action :authenticate_user!
 
   def index
     @groups = Group.all
