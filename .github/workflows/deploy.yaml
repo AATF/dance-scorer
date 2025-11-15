@@ -33,4 +33,5 @@ jobs:
       - name: Deploy
         run: |-
           aws eks update-kubeconfig --name interesting-blues-orca --region ${{ env.REGION }}
-          ./kustomizeploymentawefeDEees -o wide
+          
+          kubectl cluster-info
