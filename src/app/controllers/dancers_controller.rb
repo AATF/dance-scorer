@@ -3,7 +3,7 @@ class DancersController < ApplicationController
   before_action :require_admin, only: [:edit, :new]
 
   def index
-    @dancers = Dancer.order(:performance_order)
+    @dancers = Dancer.order(:group).order(:performance_order).group_by(:group)
   end
 
   def show

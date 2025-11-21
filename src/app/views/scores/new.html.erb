@@ -5,6 +5,14 @@
 
 <%= form_for @score, html: { class: "form-control" } do |f| %>
   <%= hidden_field_tag :dancer_id, @dancer.id %>
+  <% if @current_user.admin? %>
+    <div class="form-group">
+      <%= f.label :judge, "Judge" %>
+      <%= f.collection_select :user_id, @judges, :id, :name, prompt: "Select a judge", class: "form-control", autofocus: true %>
+    </div>
+  <% else %>
+    <%= hidden_field_tag :user_id, @current_user.id %>
+  <% end %>
 
   <div class="form-group">
     <%= f.label :theme, "Theme" %>

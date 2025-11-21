@@ -6,6 +6,7 @@ module ScoresHelper
     group.dancers.each do |dancer|
       scores[dancer.name] = average(dancer.scores.map { |s| s.total })
     end
+
     if scores.length > 0
       scores.sort_by { |k,v| v }.reverse.first[0]
     else

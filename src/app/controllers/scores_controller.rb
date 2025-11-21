@@ -8,7 +8,7 @@ class ScoresController < ApplicationController
 
   def index
     @scores = if session[:admin]
-                Score.all
+                Score.all.order_by(:dancer_id).order_by(:user_id)
               else
                 Score.where(user_id: session[:user_id])
               end
