@@ -41,4 +41,4 @@ jobs:
         run: |-
           aws eks update-kubeconfig --name interesting-blues-orca --region ${{ env.REGION }}
           
-          kubectl cluster-info
+          kubectl --namespace dance-scorer rollout restart dance-scorer
