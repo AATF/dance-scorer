@@ -1,6 +1,7 @@
 name: Deploy to eks
 
 on:
+  workflow_call:
   workflow_dispatch:
   push:
     branches:
