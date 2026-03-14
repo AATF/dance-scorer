@@ -257,7 +257,7 @@ GEM
     psych (5.3.1)
       date
       stringio
-    public_suffix (7.0.2)
+    public_suffix (7.0.5)
     puma (7.2.0)
       nio4r (~> 2.0)
     racc (1.8.1)
@@ -334,30 +334,30 @@ GEM
     rspec-mocks (3.13.8)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
-    rspec-rails (8.0.3)
+    rspec-rails (8.0.4)
       actionpack (>= 7.2)
       activesupport (>= 7.2)
       railties (>= 7.2)
-      rspec-core (~> 3.13)
-      rspec-expectations (~> 3.13)
-      rspec-mocks (~> 3.13)
-      rspec-support (~> 3.13)
+      rspec-core (>= 3.13.0, < 5.0.0)
+      rspec-expectations (>= 3.13.0, < 5.0.0)
+      rspec-mocks (>= 3.13.0, < 5.0.0)
+      rspec-support (>= 3.13.0, < 5.0.0)
     rspec-support (3.13.7)
-    sass-embedded (1.97.3-aarch64-linux-gnu)
+    sass-embedded (1.98.0-aarch64-linux-gnu)
       google-protobuf (~> 4.31)
-    sass-embedded (1.97.3-aarch64-linux-musl)
+    sass-embedded (1.98.0-aarch64-linux-musl)
       google-protobuf (~> 4.31)
-    sass-embedded (1.97.3-arm-linux-gnueabihf)
+    sass-embedded (1.98.0-arm-linux-gnueabihf)
       google-protobuf (~> 4.31)
-    sass-embedded (1.97.3-arm-linux-musleabihf)
+    sass-embedded (1.98.0-arm-linux-musleabihf)
       google-protobuf (~> 4.31)
-    sass-embedded (1.97.3-arm64-darwin)
+    sass-embedded (1.98.0-arm64-darwin)
       google-protobuf (~> 4.31)
-    sass-embedded (1.97.3-x86_64-darwin)
+    sass-embedded (1.98.0-x86_64-darwin)
       google-protobuf (~> 4.31)
-    sass-embedded (1.97.3-x86_64-linux-gnu)
+    sass-embedded (1.98.0-x86_64-linux-gnu)
       google-protobuf (~> 4.31)
-    sass-embedded (1.97.3-x86_64-linux-musl)
+    sass-embedded (1.98.0-x86_64-linux-musl)
       google-protobuf (~> 4.31)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -392,13 +392,13 @@ GEM
       sprockets (>= 3.0.0)
     stringio (3.2.0)
     thor (1.5.0)
-    thruster (0.1.18)
-    thruster (0.1.18-aarch64-linux)
-    thruster (0.1.18-arm64-darwin)
-    thruster (0.1.18-x86_64-darwin)
-    thruster (0.1.18-x86_64-linux)
+    thruster (0.1.19)
+    thruster (0.1.19-aarch64-linux)
+    thruster (0.1.19-arm64-darwin)
+    thruster (0.1.19-x86_64-darwin)
+    thruster (0.1.19-x86_64-linux)
     tilt (2.7.0)
-    timeout (0.6.0)
+    timeout (0.6.1)
     tsort (0.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
@@ -568,7 +568,7 @@ CHECKSUMS
   pry (0.16.0) sha256=d76c69065698ed1f85e717bd33d7942c38a50868f6b0673c636192b3d1b6054e
   pry-rails (0.3.11) sha256=a69e28e24a34d75d1f60bcf241192a54253f8f7ef8a62cba1e75750a9653593d
   psych (5.3.1) sha256=eb7a57cef10c9d70173ff74e739d843ac3b2c019a003de48447b2963d81b1974
-  public_suffix (7.0.2) sha256=9114090c8e4e7135c1fd0e7acfea33afaab38101884320c65aaa0ffb8e26a857
+  public_suffix (7.0.5) sha256=1a8bb08f1bbea19228d3bed6e5ed908d1cb4f7c2726d18bd9cadf60bc676f623
   puma (7.2.0) sha256=bf8ef4ab514a4e6d4554cb4326b2004eba5036ae05cf765cfe51aba9706a72a8
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
   rack (3.2.5) sha256=4cbd0974c0b79f7a139b4812004a62e4c60b145cba76422e288ee670601ed6d3
@@ -594,16 +594,16 @@ CHECKSUMS
   rspec-core (3.13.6) sha256=a8823c6411667b60a8bca135364351dda34cd55e44ff94c4be4633b37d828b2d
   rspec-expectations (3.13.5) sha256=33a4d3a1d95060aea4c94e9f237030a8f9eae5615e9bd85718fe3a09e4b58836
   rspec-mocks (3.13.8) sha256=086ad3d3d17533f4237643de0b5c42f04b66348c28bf6b9c2d3f4a3b01af1d47
-  rspec-rails (8.0.3) sha256=b0a440e7a10700317d898a014852e26660867298c4076dbc3baa99c768b79dc1
+  rspec-rails (8.0.4) sha256=06235692fc0892683d3d34977e081db867434b3a24ae0dd0c6f3516bad4e22df
   rspec-support (3.13.7) sha256=0640e5570872aafefd79867901deeeeb40b0c9875a36b983d85f54fb7381c47c
-  sass-embedded (1.97.3-aarch64-linux-gnu) sha256=81915bb19ce7e224eae534e75e828f4ab5acddcb17e54da0b5ef91d932462836
-  sass-embedded (1.97.3-aarch64-linux-musl) sha256=508c92fa2f9e58f9072325e02f011bd22c7e428465c67fafaee570d0bc40563b
-  sass-embedded (1.97.3-arm-linux-gnueabihf) sha256=ce443b57f3d7f03740267cf0f2cdff13e8055dd5938488967746f29f230222da
-  sass-embedded (1.97.3-arm-linux-musleabihf) sha256=be3972424616f916ce1f4f41228266d57339e490dfd7ca0cea5588579564d4c0
-  sass-embedded (1.97.3-arm64-darwin) sha256=8897d3503efe75c30584070a7104095545f5157665029aeb9bff3fa533a73861
-  sass-embedded (1.97.3-x86_64-darwin) sha256=578f167907ee2a4d355a5a40bcf35d2e3eb90c87008dcd9ce31a2c4a877697f6
-  sass-embedded (1.97.3-x86_64-linux-gnu) sha256=173a4d0dbe2fffdf7482bd3e82fb597dfc658c18d1e8fd746aa7d5077ed4e850
-  sass-embedded (1.97.3-x86_64-linux-musl) sha256=fcc0dcb253ef174ea25283f8781ce9ce95a492663f4bdbb1d66bfae99267a9f7
+  sass-embedded (1.98.0-aarch64-linux-gnu) sha256=019baa4ee850f9d6f3f53125fd4ee56b13ea5191bc8f8f9436825ec3e171b02d
+  sass-embedded (1.98.0-aarch64-linux-musl) sha256=9f4defd3cddf0bbf129f0b6ad8af966bdb90e36ab162f49a5b9f1baaf3339af1
+  sass-embedded (1.98.0-arm-linux-gnueabihf) sha256=763277f4070caccd6fcbcf4c54249539effe78c36850617922834a8eb72177d7
+  sass-embedded (1.98.0-arm-linux-musleabihf) sha256=7e21e46569f5cc47d5d04d77c73e4bdb08547304e2ed0ff6b9a83d608c0d9a2b
+  sass-embedded (1.98.0-arm64-darwin) sha256=fed4ee6de2f30b14e7a678ca648730aa78acc86be7a555e16ba3fdbc5e6aca69
+  sass-embedded (1.98.0-x86_64-darwin) sha256=a0b5b64f0157e2f1d713ac5ea75474c8507c464f0923090094471c33d4244484
+  sass-embedded (1.98.0-x86_64-linux-gnu) sha256=36b72021e00cfdd91ccb9eb490cff6addc376424cf9c2786f01392c8d0f0d4a0
+  sass-embedded (1.98.0-x86_64-linux-musl) sha256=8f66a2db9bb1efd95df340e4157be3803be8b22b5f2f5280d9387553fcb9584a
   sass-rails (6.0.0) sha256=e0b6448ea1c7929fd5929fc7a8eb2d78045e44cc82fc0765a249d3fa1c5810d3
   sassc (2.4.0) sha256=4c60a2b0a3b36685c83b80d5789401c2f678c1652e3288315a1551d811d9f83e
   sassc-embedded (1.80.8) sha256=ea62825e4031cc8267e6befd492bcf8e29f11ccc18500f4e8ee9adb7feb6d563
@@ -618,13 +618,13 @@ CHECKSUMS
   sprockets-rails (3.5.2) sha256=a9e88e6ce9f8c912d349aa5401509165ec42326baf9e942a85de4b76dbc4119e
   stringio (3.2.0) sha256=c37cb2e58b4ffbd33fe5cd948c05934af997b36e0b6ca6fdf43afa234cf222e1
   thor (1.5.0) sha256=e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73
-  thruster (0.1.18) sha256=f025103bc7c8e6747436bb9de058c366840d2871560574ea7070a9bc8608a889
-  thruster (0.1.18-aarch64-linux) sha256=16f3d49468d76a9a5de86b7bdedf535b7b80da7c16495ca8ec96cfdc256870e2
-  thruster (0.1.18-arm64-darwin) sha256=8b297797a354ec6a81ea156b44279b66bff8da2404112f70f4ec515c2f276cc2
-  thruster (0.1.18-x86_64-darwin) sha256=355b6c0ee30ead7f7096448de4f0f9e8acc8454d2ef24b2d54965c5d813f1c67
-  thruster (0.1.18-x86_64-linux) sha256=0ec1ff5f12289c1ac10cf8e28ce6b5266f4e73416b34a664b79d037c7d955c40
+  thruster (0.1.19) sha256=3246eb6ea6fe699e89d6eecc4edda856452e4ebeb9d5999791f0e88832369527
+  thruster (0.1.19-aarch64-linux) sha256=cfabff204f655359675c3f0e3e3940c6d1f110b765d0d48f5281077b8bb65325
+  thruster (0.1.19-arm64-darwin) sha256=2e1994341ad1076cea438a5a86b0dc126dc6e66f5a67f2dc077779b73e9fb6e3
+  thruster (0.1.19-x86_64-darwin) sha256=f026e833dc67048843919ce31a8b12b97b532df41a749d66b72f282efd2a0693
+  thruster (0.1.19-x86_64-linux) sha256=7cddc1bd0c4fb2e26cc4878dc1f4eb7e883a45932e8d1cacda71b1aba1a645b6
   tilt (2.7.0) sha256=0d5b9ba69f6a36490c64b0eee9f6e9aad517e20dcc848800a06eb116f08c6ab3
-  timeout (0.6.0) sha256=6d722ad619f96ee383a0c557ec6eb8c4ecb08af3af62098a0be5057bf00de1af
+  timeout (0.6.1) sha256=78f57368a7e7bbadec56971f78a3f5ecbcfb59b7fcbb0a3ed6ddc08a5094accb
   tsort (0.2.0) sha256=9650a793f6859a43b6641671278f79cfead60ac714148aabe4e3f0060480089f
   tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
   uglifier (4.2.1) sha256=75d42b81b10bfd21e7a427fabb1d49ff5ea7bda3c4a5039ddb2a78d194c6f5aa
@@ -638,7 +638,7 @@ CHECKSUMS
   zeitwerk (2.7.5) sha256=d8da92128c09ea6ec62c949011b00ed4a20242b255293dd66bf41545398f73dd
 
 RUBY VERSION
-  ruby 3.4.8
+  ruby 3.4.9
 
 BUNDLED WITH
-  4.0.7
+  4.0.8
