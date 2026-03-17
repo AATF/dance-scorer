@@ -32,4 +32,4 @@ gem "thruster", "~> 0.1"
 gem "mysql2", "~> 0.5"
 gem "rails_live_reload", "~> 0.5"
 
-gem "devise", "~> 4.9"
+gem "devise", "~> 5.0"
