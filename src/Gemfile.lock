@@ -107,10 +107,10 @@ GEM
       sprockets-rails
       tilt
     date (3.5.1)
-    devise (4.9.4)
+    devise (5.0.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (>= 4.1.0)
+      railties (>= 7.0)
       responders
       warden (~> 1.2.3)
     diff-lcs (1.6.2)
@@ -183,7 +183,7 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     logger (1.7.0)
-    loofah (2.25.0)
+    loofah (2.25.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.9.0)
@@ -436,7 +436,7 @@ DEPENDENCIES
   bootstrap (~> 5.1)
   capybara (~> 3.40)
   dartsass-sprockets (~> 3.2)
-  devise (~> 4.9)
+  devise (~> 5.0)
   factory_bot_rails (~> 6.5)
   jquery-rails (~> 4.6)
   launchy (~> 3.0)
@@ -490,7 +490,7 @@ CHECKSUMS
   crass (1.0.6) sha256=dc516022a56e7b3b156099abc81b6d2b08ea1ed12676ac7a5657617f012bd45d
   dartsass-sprockets (3.2.1) sha256=5163c59d155bfb834e2554bec00e2ff9ab97ad3ea82545cbacf650cf0469f3c3
   date (3.5.1) sha256=750d06384d7b9c15d562c76291407d89e368dda4d4fff957eb94962d325a0dc0
-  devise (4.9.4) sha256=920042fe5e704c548aa4eb65ebdd65980b83ffae67feb32c697206bfd975a7f8
+  devise (5.0.3) sha256=c4c065051cdc4ace11547b2b7f5c3c4c97d0f1269250f5fe90f614ff78f29546
   diff-lcs (1.6.2) sha256=9ae0d2cba7d4df3075fe8cd8602a8604993efc0dfa934cff568969efb1909962
   drb (2.2.3) sha256=0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373
   erb (6.0.2) sha256=9fe6264d44f79422c87490a1558479bd0e7dad4dd0e317656e67ea3077b5242b
@@ -529,7 +529,7 @@ CHECKSUMS
   libv8-node (24.12.0.1-x86_64-linux-musl) sha256=7563175534c40893815bfd28e8fe27e12ff1656700c7208f53de06d14001712b
   listen (3.10.0) sha256=c6e182db62143aeccc2e1960033bebe7445309c7272061979bb098d03760c9d2
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
-  loofah (2.25.0) sha256=df5ed7ac3bac6a4ec802df3877ee5cc86d027299f8952e6243b3dac446b060e6
+  loofah (2.25.1) sha256=d436c73dbd0c1147b16c4a41db097942d217303e1f7728704b37e4df9f6d2e04
   mail (2.9.0) sha256=6fa6673ecd71c60c2d996260f9ee3dd387d4673b8169b502134659ece6d34941
   marcel (1.1.0) sha256=fdcfcfa33cc52e93c4308d40e4090a5d4ea279e160a7f6af988260fa970e0bee
   matrix (0.4.3) sha256=a0d5ab7ddcc1973ff690ab361b67f359acbb16958d1dc072b8b956a286564c5b
