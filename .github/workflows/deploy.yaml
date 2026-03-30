@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'src/*'
-      - 'docker/*'
+      - 'src/**'
+      - 'docker/**'
     branches:
       - main
 
