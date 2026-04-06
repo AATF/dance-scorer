@@ -198,7 +198,7 @@ GEM
     mini_mime (1.1.5)
     mini_racer (0.20.0)
       libv8-node (~> 24.12.0.1)
-    minitest (6.0.2)
+    minitest (6.0.3)
       drb (~> 2.0)
       prism (~> 1.5)
     msgpack (1.8.0)
@@ -536,7 +536,7 @@ CHECKSUMS
   method_source (1.1.0) sha256=181301c9c45b731b4769bc81e8860e72f9161ad7d66dd99103c9ab84f560f5c5
   mini_mime (1.1.5) sha256=8681b7e2e4215f2a159f9400b5816d85e9d8c6c6b491e96a12797e798f8bccef
   mini_racer (0.20.0) sha256=860e944c20894413c0e4921f8531166b22180d988e75a5dc152be9505da91ff2
-  minitest (6.0.2) sha256=db6e57956f6ecc6134683b4c87467d6dd792323c7f0eea7b93f66bd284adbc3d
+  minitest (6.0.3) sha256=88ac8a1de36c00692420e7cb3cc11a0773bbcb126aee1c249f320160a7d11411
   msgpack (1.8.0) sha256=e64ce0212000d016809f5048b48eb3a65ffb169db22238fb4b72472fecb2d732
   mysql2 (0.5.7) sha256=ba09ede515a0ae8a7192040a1b778c0fb0f025fa5877e9be895cd325fa5e9d7b
   net-imap (0.6.3) sha256=9bab75f876596d09ee7bf911a291da478e0cd6badc54dfb82874855ccc82f2ad
