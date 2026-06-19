@@ -15,8 +15,8 @@ jobs:
     uses: ./.github/workflows/run-tests.yaml
 
   release:
-    name: Release
-    runs-on: ubuntu-latest
+    name: Release new version
+    runs-on: faww/waf-ci:latest
     needs: verify
     steps:
       - name: Checkout
