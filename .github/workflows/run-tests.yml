@@ -8,6 +8,7 @@ on:
       - 'spec/**'
       - 'app/**'
   workflow_dispatch:
+  workflow_call:
   
 jobs:
   build:
