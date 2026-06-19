@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   verify:
-    uses: ./.github/workflows/run-tests.yml
+    uses: ./.github/workflows/run-tests.yaml
 
   release:
     name: Release
