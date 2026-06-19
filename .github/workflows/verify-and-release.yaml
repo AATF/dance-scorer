@@ -1,5 +1,6 @@
 name: Verify and Release
 on:
+  workflow_dispatch:
   push:
     branches:
       - main # or master
