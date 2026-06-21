@@ -12,7 +12,9 @@ on:
   
 jobs:
   build:
-    runs-on: faww/waf-ci:latest
+    runs-on: ubuntu-latest
+    container:
+      image: faww/waf-ci:latest
 
     services:
       mysql:
