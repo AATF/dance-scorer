@@ -11,7 +11,7 @@ on:
     paths:
       - 'src/**'
       - '!**.md'
-      - 'workflows/update-gemfilelock.yml'
+      - '.github/workflows/update-gemfilelock.yml'
   schedule:
     - cron: '3 7 */13 * *'
   workflow_dispatch:
