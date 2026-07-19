@@ -13,9 +13,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: faww/waf-ci:latest
-
     services:
       mysql:
         image: mysql:5.7
