@@ -3,7 +3,7 @@ DOCKER := docker
 IMAGE = $(file < docker/IMAGE)
 TAG = $(IMAGE):$(file < VERSION)
 
-REGISTRY_URL = aatf
+REGISTRY = aatf
 
 .PHONY: all build upload run test deploy
 
