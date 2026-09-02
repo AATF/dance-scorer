@@ -5,17 +5,21 @@ TAG = $(IMAGE):$(file < docker/VERSION)
 
 REGISTRY_URL = aatf
 
+.PHONY: all build upload run test deploy
+
 all: build upload
 
 build:
 	$(DOCKER) build --file docker/Dockerfile --tag $(TAG) .
 
 upload:
-	$(DOCKER) tag $(TAG) $(REGISTRY_URL)/$(TAG)
-	$(DOCKER) push $(REGISTRY_URL)/$(TAG)
-
-	$(DOCKER) tag $(TAG) $(REGISTRY_URL)/$(IMAGE):latest
-	$(DOCKER) push $(REGISTRY_URL)/$(IMAGE):latest
+	$(DOCKER) buildx build \
+		--file docker/Dockerfile \
+		--no-cache \
+		--platform linux/arm64,linux/amd64 \
+		--push \
+		--tag $(REGISTRY)/$(TAG) \
+		--tag $(REGISTRY)/$(IMAGE):latest .
 
 run: build
 	$(DOCKER) run -p 60000:8080 -it --entrypoint /bin/bash $(TAG)
