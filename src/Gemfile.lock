@@ -212,7 +212,7 @@ GEM
       net-protocol
     net-protocol (0.4.0)
       timeout
-    net-smtp (0.5.1)
+    net-smtp (0.5.2)
       net-protocol
     nio4r (2.7.5)
     nokogiri (1.19.4-aarch64-linux-gnu)
@@ -318,12 +318,12 @@ GEM
       logger
       prism (>= 1.6.0)
       tsort
-    rdoc (8.0.0)
+    rdoc (8.1.0)
       erb
       prism (>= 1.6.0)
       rbs (>= 4.0.0)
       tsort
-    regexp_parser (2.13.0)
+    regexp_parser (2.13.1)
     reline (0.7.0)
       io-console (~> 0.5)
     responders (3.2.1)
@@ -346,21 +346,21 @@ GEM
       rspec-mocks (>= 3.13.0, < 5.0.0)
       rspec-support (>= 3.13.0, < 5.0.0)
     rspec-support (3.13.7)
-    sass-embedded (1.105.0-aarch64-linux-gnu)
+    sass-embedded (1.105.1-aarch64-linux-gnu)
       google-protobuf (~> 4.31)
-    sass-embedded (1.105.0-aarch64-linux-musl)
+    sass-embedded (1.105.1-aarch64-linux-musl)
       google-protobuf (~> 4.31)
-    sass-embedded (1.105.0-arm-linux-gnueabihf)
+    sass-embedded (1.105.1-arm-linux-gnueabihf)
       google-protobuf (~> 4.31)
-    sass-embedded (1.105.0-arm-linux-musleabihf)
+    sass-embedded (1.105.1-arm-linux-musleabihf)
       google-protobuf (~> 4.31)
-    sass-embedded (1.105.0-arm64-darwin)
+    sass-embedded (1.105.1-arm64-darwin)
       google-protobuf (~> 4.31)
-    sass-embedded (1.105.0-x86_64-darwin)
+    sass-embedded (1.105.1-x86_64-darwin)
       google-protobuf (~> 4.31)
-    sass-embedded (1.105.0-x86_64-linux-gnu)
+    sass-embedded (1.105.1-x86_64-linux-gnu)
       google-protobuf (~> 4.31)
-    sass-embedded (1.105.0-x86_64-linux-musl)
+    sass-embedded (1.105.1-x86_64-linux-musl)
       google-protobuf (~> 4.31)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -484,7 +484,7 @@ CHECKSUMS
   bootsnap (1.26.0) sha256=ca96237015e6cd74a02963d5821cf00ac5ea134653b323e8cd6d702a7718bf1b
   bootstrap (5.3.8) sha256=1c23b06df24ec28a0058ad90a0da93e260d2c0a5c453d7087f6bad428464742f
   builder (3.3.0) sha256=497918d2f9dca528fdca4b88d84e4ef4387256d984b8154e9d5d3fe5a9c8835f
-  bundler (4.0.21) sha256=7cbf5499b426076aa16c8d28a59e4c2c3aad5a438402abcd961f0119f29f1dd0
+  bundler (4.0.22) sha256=d8d5ec84c8555e0af71db63ed7aee4d1a8fb839ec46d84212d61979242a5d75a
   capybara (3.40.0) sha256=42dba720578ea1ca65fd7a41d163dd368502c191804558f6e0f71b391054aeef
   childprocess (5.1.0) sha256=9a8d484be2fd4096a0e90a0cd3e449a05bc3aa33f8ac9e4d6dcef6ac1455b6ec
   coderay (1.1.3) sha256=dc530018a4684512f8f38143cd2a096c9f02a1fc2459edcfe534787a7fc77d4b
@@ -545,7 +545,7 @@ CHECKSUMS
   net-imap (0.6.7) sha256=b5c9573be975d856de252ee851871724da66aa2d449b2482d5690bd12bc23660
   net-pop (0.1.2) sha256=848b4e982013c15b2f0382792268763b748cce91c9e91e36b0f27ed26420dff3
   net-protocol (0.4.0) sha256=f9f90c8c6f64794a45160bf422177a336db12809de3beeeaa26b88fcd2e8c853
-  net-smtp (0.5.1) sha256=ed96a0af63c524fceb4b29b0d352195c30d82dd916a42f03c62a3a70e5b70736
+  net-smtp (0.5.2) sha256=35103cc04d6b2d94632f9928ede07483c24b70b9c0db1f231fea43909b678f3c
   nio4r (2.7.5) sha256=6c90168e48fb5f8e768419c93abb94ba2b892a1d0602cb06eef16d8b7df1dca1
   nokogiri (1.19.4-aarch64-linux-gnu) sha256=1269fb644a6de405057a53dd5c762b1209b43ca7424f839454d3dbc677c31a8f
   nokogiri (1.19.4-aarch64-linux-musl) sha256=35c65b9ce72b3bb03207bdbe7067915019dc18c1b9b59139684bd6690fdd01af
@@ -590,8 +590,8 @@ CHECKSUMS
   rb-fsevent (0.11.2) sha256=43900b972e7301d6570f64b850a5aa67833ee7d87b458ee92805d56b7318aefe
   rb-inotify (0.11.1) sha256=a0a700441239b0ff18eb65e3866236cd78613d6b9f78fea1f9ac47a85e47be6e
   rbs (4.2.0) sha256=51f7b886dcc05bc09e10b901daa6a81829f6adc03101d6ca9ea4aac6103e0674
-  rdoc (8.0.0) sha256=03bf8c08a9639658855a0cfd77c0abca8325c227693f7f33f82957811348c469
-  regexp_parser (2.13.0) sha256=d105d95d2138954e73914d2fbfb3d0a8f8605a49a3e89864c32e78b9107cb770
+  rdoc (8.1.0) sha256=befc37880a5cfd36dcb176c748b5fd5ee39dd3536a75e81824e4972ce230f60a
+  regexp_parser (2.13.1) sha256=5aedb6b7c35688f51e86eef17a15374dfd287c83f4ca644b2c5f3ec50a33b44b
   reline (0.7.0) sha256=5b012d8e55dbf9d450f12bde2cf7d15ff546ae80b3f8f3b30e570d431815583d
   responders (3.2.1) sha256=c2772970cbda654c0e772d852e5a851e82cd8e96f5fa958650861ba75b8ffa84
   rspec-core (3.13.6) sha256=a8823c6411667b60a8bca135364351dda34cd55e44ff94c4be4633b37d828b2d
@@ -599,14 +599,14 @@ CHECKSUMS
   rspec-mocks (3.13.8) sha256=086ad3d3d17533f4237643de0b5c42f04b66348c28bf6b9c2d3f4a3b01af1d47
   rspec-rails (8.0.4) sha256=06235692fc0892683d3d34977e081db867434b3a24ae0dd0c6f3516bad4e22df
   rspec-support (3.13.7) sha256=0640e5570872aafefd79867901deeeeb40b0c9875a36b983d85f54fb7381c47c
-  sass-embedded (1.105.0-aarch64-linux-gnu) sha256=26dc2b0f8063f99ad4df226ebecac361c52ce06c63d8acc20ebc615d1450ea09
-  sass-embedded (1.105.0-aarch64-linux-musl) sha256=f74817c6d12cd63ce8b479844b2a791c68dca69500808925276f19bab875c072
-  sass-embedded (1.105.0-arm-linux-gnueabihf) sha256=32562783fcddcb83f1530b079c2920acffea40affc7bbbde4e0434fb5eb44b1b
-  sass-embedded (1.105.0-arm-linux-musleabihf) sha256=b1e766f2d95a8e08446640013fa00d8b006fe1679c7adabc54f3e9cd09aaa6a0
-  sass-embedded (1.105.0-arm64-darwin) sha256=c9a7bdcf976b03c7a420df25de1ce39255cc8c9776117ea20bcf0fe7cbadee3f
-  sass-embedded (1.105.0-x86_64-darwin) sha256=4e2d4238f8e286e0b256b63d3713ad27a06542b3079087e54d2c169072fb77fa
-  sass-embedded (1.105.0-x86_64-linux-gnu) sha256=c7cb4884c6d1ddad41d52f5950167d5cf77e242d7900ca0ec13170ba43878977
-  sass-embedded (1.105.0-x86_64-linux-musl) sha256=fbbda8c5df1073e177382cccd8c640ed7f49553e040713cd7fffca1af194cf96
+  sass-embedded (1.105.1-aarch64-linux-gnu) sha256=e86b54a8dc1ce0d348cf3e963b5f5650995666db9fdb534c4d6febaeaddc5c6b
+  sass-embedded (1.105.1-aarch64-linux-musl) sha256=8f36f6de801adbaff3280f6758df790a4f97340ad10034df58cfda280c445c11
+  sass-embedded (1.105.1-arm-linux-gnueabihf) sha256=8c134162e7d8769a01a3775aff66b14e97677f3eda025dc353b0f994ad50e058
+  sass-embedded (1.105.1-arm-linux-musleabihf) sha256=7e1c8b19c1304d7930e9c95d066b63fe19c3e50aea301c70981dfa543e80b4bf
+  sass-embedded (1.105.1-arm64-darwin) sha256=e414773b18cd25851c292e34a2462eae04011fffc0eb94d5b65a40f29b1044ac
+  sass-embedded (1.105.1-x86_64-darwin) sha256=8cd6e33e1511f76f3f65001998cba419cffbccdeb699c6abedb36fd24dc3d46f
+  sass-embedded (1.105.1-x86_64-linux-gnu) sha256=9038bc2256d7ecbfd352c15b77a3c8b6f0b72b763348d26564b5c0a123f48351
+  sass-embedded (1.105.1-x86_64-linux-musl) sha256=be8897b9e2e27e9a6eac30e198ec7c9479b255f0a9da3109d4749e544ed75a11
   sass-rails (6.0.0) sha256=e0b6448ea1c7929fd5929fc7a8eb2d78045e44cc82fc0765a249d3fa1c5810d3
   sassc (2.4.0) sha256=4c60a2b0a3b36685c83b80d5789401c2f678c1652e3288315a1551d811d9f83e
   sassc-embedded (1.80.10) sha256=6baf835e2208d5905d8cff7d0322af45ee3a5933d4d93d22e2875ade967d8a57
@@ -643,4 +643,4 @@ RUBY VERSION
   ruby 3.4.11
 
 BUNDLED WITH
-  4.0.21
+  4.0.22
