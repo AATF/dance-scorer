@@ -1,30 +1,28 @@
 require 'rails_helper'
 require 'spec_helper'
 
-RSpec.describe Person, type: :model do
-  let(:person) { Person.new(first_name: "first", last_name: "last", wsdc_id: 1234) }
-  let(:person_without_first) { Person.new(first_name: nil, last_name: "last") }
-  let(:person_without_last) { Person.new(first_name: "first", last_name: nil) }
+RSpec.describe Dancer, type: :model do
+  let(:group) { Group.new(name: "Test Group") }
+  let(:dancer) { Dancer.new(name: "Test Dancer", dance_name: "Test Dance", performance_order: 1, group: group) }
 
-
-  describe "description" do
-    it "person is valid with all required fields" do
-      expect(person.first_name).to eq("first")
-      expect(person.last_name).to eq("last")
-      expect(person.wsdc_id).to eq(1234)
+  describe "validations" do
+    it "is valid with valid attributes" do
+      expect(dancer).to be_valid
     end
 
-    it "person is not valid if first name is missing" do
-      expect(person_without_first.save).to eq(false)
+    it "is not valid without a name" do
+      dancer.name = nil
+      expect(dancer).not_to be_valid
     end
 
-    it "person is not valid if last name is missing" do
-      expect(person_without_last.save).to eq(false)
+    it "is not valid without a group" do
+      dancer.group = nil
+      expect(dancer).not_to be_valid
     end
 
-    it "WSDC ID must be a number" do
-      wsdc = Person.new(first_name: "first", last_name: "last", wsdc_id: "1234")
-      expect(wsdc.save).to eq(false)
+    it "is not valid with a non-numeric performance_order" do
+      dancer.performance_order = "abc"
+      expect(dancer).not_to be_valid
     end
   end
 end

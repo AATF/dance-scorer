@@ -3,10 +3,10 @@ name: Deploy to eks
 on:
   workflow_call:
   workflow_dispatch:
-  push:
-    paths:
-      - 'src/**'
-      - 'docker/**'
+  workflow_run:
+    workflows: ["build image"]
+    types:
+      - completed
     branches:
       - main
 

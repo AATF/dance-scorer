@@ -3,17 +3,21 @@ default: &default
   encoding: utf8
   database: dance_scorer
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV.fetch("RAILS_DB_USER") %>
-  password: <%= ENV.fetch("RAILS_DB_PASS") %>
-  host: <%= ENV.fetch("RAILS_DB_HOST") %>
+  username: <%= ENV.fetch("RAILS_DB_USER") { "root" } %>
+  password: <%= ENV.fetch("RAILS_DB_PASS") { "" } %>
+  host: <%= ENV.fetch("RAILS_DB_HOST") { "127.0.0.1" } %>
 
 development:
   <<: *default
   database: test
 
 test:
-  <<: *default
-  database: test
+  adapter: <%= ENV.fetch("TEST_DB_ADAPTER", "mysql2") %>
+  encoding: <%= ENV.fetch("TEST_DB_ENCODING", "utf8") %>
+  database: <%= ENV.fetch("TEST_DB_NAME", "test") %>
+  username: <%= ENV.fetch("TEST_DB_USER") { ENV.fetch("RAILS_DB_USER", "root") } %>
+  password: <%= ENV.fetch("TEST_DB_PASS") { ENV.fetch("RAILS_DB_PASS", "") } %>
+  host: <%= ENV.fetch("TEST_DB_HOST") { ENV.fetch("RAILS_DB_HOST", "127.0.0.1") } %>
 
 production:
   <<: *default
