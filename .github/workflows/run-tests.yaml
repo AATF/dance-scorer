@@ -5,8 +5,8 @@ on:
     branches:
       - '*'
     paths:
-      - 'spec/**'
-      - 'app/**'
+      - 'src/**'
+      - '.github/workflows/run-tests.yaml'
   workflow_dispatch:
   workflow_call:
   
@@ -39,10 +39,16 @@ jobs:
         cd src
         gem install bundler
         bundle install --jobs 6 --retry 3
+        bundle exec rake db:schema:load
         bundle exec rake
       env:
-        RAILS_ENV: development
-        MYSQL_HOST: localhost
-        RAILS_DB_HOST: localhost
+        RAILS_ENV: test
+        MYSQL_HOST: 127.0.0.1
+        RAILS_DB_HOST: 127.0.0.1
         RAILS_DB_USER: user
         RAILS_DB_PASS: user_password
+        TEST_DB_HOST: 127.0.0.1
+        TEST_DB_USER: user
+        TEST_DB_PASS: user_password
+        TEST_DB_NAME: scorer_dev
+
