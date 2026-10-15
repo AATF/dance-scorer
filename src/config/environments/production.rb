@@ -20,6 +20,10 @@ Rails.application.configure do
 
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = {
+    host: ENV.fetch('APP_HOST', 'localhost'),
+    protocol: ENV.fetch('APP_PROTOCOL', 'https')
+  }
 
 
   config.i18n.fallbacks = true

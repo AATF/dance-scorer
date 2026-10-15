@@ -3,7 +3,7 @@ class DancersController < ApplicationController
   before_action :require_admin, only: [:edit, :new]
 
   def index
-    @dancers = Dancer.order(:group).order(:performance_order).group_by(:group)
+    @dancers = Dancer.includes(:group).order("groups.name ASC, dancers.performance_order ASC")
   end
 
   def show
