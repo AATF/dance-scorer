@@ -14,15 +14,10 @@ env:
   REGION: us-west-2
 
 jobs:
-  build:
-    uses: ./.github/workflows/build-image.yaml
-    secrets: inherit
-  
   deploy:
     name: Deploy
     runs-on: 'ubuntu-latest'
     environment: 'production'
-    needs: build
 
     permissions:
       contents: 'read'
