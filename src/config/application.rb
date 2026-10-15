@@ -25,5 +25,7 @@ module DanceRegistration
     config.generators do |g|
       g.orm :active_record, primary_key_type: :uuid
     end
+
+    config.exceptions_app = ->(env) { ErrorsController.action(:show).call(env) }
   end
 end
