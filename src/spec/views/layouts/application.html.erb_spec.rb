@@ -58,4 +58,22 @@ RSpec.describe "layouts/application.html.erb", type: :view do
       expect(rendered).to have_link("Logout", href: logout_path)
     end
   end
+
+  describe "footer" do
+    it "renders footer with app version when version is present" do
+      allow(view).to receive(:app_version).and_return("26.29.1")
+      render template: "layouts/application"
+
+      expect(rendered).to have_css("footer")
+      expect(rendered).to have_css("footer", text: "26.29.1")
+    end
+
+    it "renders footer without version text when app_version is nil" do
+      allow(view).to receive(:app_version).and_return(nil)
+      render template: "layouts/application"
+
+      expect(rendered).to have_css("footer")
+      expect(rendered).not_to have_css("footer span.text-muted")
+    end
+  end
 end

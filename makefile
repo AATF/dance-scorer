@@ -44,7 +44,7 @@ run: build
 	$(DOCKER) run -p 60000:8080 -it --entrypoint /bin/bash $(TAG)
 
 test:
-	$(DOCKER) run --rm --network host -e RAILS_ENV=test --entrypoint bundle -v "$$(pwd)/src:/rails" -w /rails $(TAG) exec rake
+	$(DOCKER) run --rm --network host -e RAILS_ENV=test --entrypoint bundle -v "$$(pwd)/src:/rails" -v "$$(pwd)/VERSION:/VERSION:ro" -w /rails $(TAG) exec rake
 
 deploy:
 	go run ./scripts/deploy.go
