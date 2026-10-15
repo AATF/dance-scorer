@@ -1,23 +1,29 @@
 require 'rails_helper'
 require 'spec_helper'
 
-RSpec.describe Judge, type: :model do
-  let(:judge) { Judge.new(first_name: "first", last_name: "last") }
-  let(:judge_without_first) { Judge.new(first_name: nil, last_name: "last") }
-  let(:judge_without_last) { Judge.new(first_name: "first", last_name: nil) }
+RSpec.describe User, type: :model do
+  let(:user) { User.new(name: "Test User", username: "testuser", email: "test@example.com", password: "password", admin: false) }
+  let(:user_without_name) { User.new(name: nil, username: "testuser", email: "test@example.com", password: "password", admin: false) }
+  let(:user_without_username) { User.new(name: "Test User", username: nil, email: "test@example.com", password: "password", admin: false) }
 
-  describe "judge model validations" do
-    it "person is valid with all required fields" do
-      expect(judge.first_name).to eq("first")
-      expect(judge.last_name).to eq("last")
+  describe "user model validations" do
+    it "is valid with all required fields" do
+      expect(user).to be_valid
     end
 
-    it "judge is not valid if first name is missing" do
-      expect(judge_without_first.save).to eq(false)
+    it "is not valid if name is missing" do
+      expect(user_without_name.save).to eq(false)
     end
 
-    it "judge is not valid if last name is missing" do
-      expect(judge_without_last.save).to eq(false)
+    it "is not valid if username is missing" do
+      expect(user_without_username.save).to eq(false)
+    end
+  end
+
+  describe "uuid primary key" do
+    it "automatically generates a UUID for id on save" do
+      user.save!
+      expect(user.id).to match(/\A[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\z/i)
     end
   end
 end

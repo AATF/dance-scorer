@@ -25,4 +25,14 @@ RSpec.describe Dancer, type: :model do
       expect(dancer).not_to be_valid
     end
   end
+
+  describe "uuid primary key" do
+    it "automatically generates a UUID for id on save" do
+      group.save!
+      dancer.save!
+      expect(dancer.id).to match(/\A[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\z/i)
+      expect(dancer.group_id).to eq(group.id)
+      expect(dancer.group_id).to match(/\A[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\z/i)
+    end
+  end
 end

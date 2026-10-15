@@ -48,11 +48,12 @@ class ScoresController < ApplicationController
   def update
     params.permit(:dancer_id, :user_id, :theme, :presentation, :technique, :choreography, :costume, :music, :violation, :total)
 
+    dancer_id = params[:dancer_id] || params.dig(:score, :dancer_id)
     score = params[:score]
     score[:total] = total_score(score)
 
-    s = Score.find(params[:id].to_i)
-    s.update(dancer_id: score[:dancer_id], user_id: session[:user_id], theme: score[:theme], presentation: score[:presentation], technique: score[:technique], choreography: score[:choreography], costume: score[:costume], music: score[:music], violation: score[:violation], total: total_score(score))
+    s = Score.find(params[:id])
+    s.update(dancer_id: dancer_id || s.dancer_id, user_id: session[:user_id], theme: score[:theme], presentation: score[:presentation], technique: score[:technique], choreography: score[:choreography], costume: score[:costume], music: score[:music], violation: score[:violation], total: total_score(score))
     if s.save
       flash[:notice] = "Successfully updated scores"
       redirect_to scores_path
@@ -67,12 +68,13 @@ class ScoresController < ApplicationController
   private
 
   def total_score(score)
-    if score[:total]
-      scores = score.transform_values { |v| ScoresHelper::NIL_SCORE }
-      total = score[:total]
+    if score[:total].present?
+      score[:total].to_f
     else
-      scores = score.transform_values { |v| v.to_f }
-      total = ScoresHelper.total_score(scores)
+      scoring_fields = [:theme, :presentation, :technique, :choreography, :costume, :music, :violation]
+      clean_scores = score.to_unsafe_h.symbolize_keys.slice(*scoring_fields)
+      scores = clean_scores.transform_values { |v| v.to_f }
+      ScoresHelper.total_score(scores)
     end
   end
 end
